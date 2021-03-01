@@ -1,0 +1,124 @@
+{
+  "src/lib/components/Slider.js": {
+    "description": "ExampleComponent is an example component.\nIt takes a property, `label`, and\ndisplays it.\nIt renders an input with the property `value`\nwhich is editable by the user.",
+    "displayName": "Slider",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Slider id"
+      },
+      "name": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Form item name"
+      },
+      "inputType": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The form element type",
+        "defaultValue": {
+          "value": "'number'",
+          "computed": false
+        }
+      },
+      "ariaLabelInput": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ARIA label for the <input>",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "labelText": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Label text"
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disabled",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "light": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Light variant",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "hideTextInput": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Without text input",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "value": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "The value"
+      },
+      "min": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "The minimum value"
+      },
+      "max": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "The maximum value"
+      },
+      "step": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "The step"
+      },
+      "stepMultiplier": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The step factor for Shift+arrow keys",
+        "defaultValue": {
+          "value": "5",
+          "computed": false
+        }
+      }
+    }
+  }
+}
