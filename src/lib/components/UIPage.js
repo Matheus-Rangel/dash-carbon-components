@@ -11,6 +11,8 @@ import PropTypes from 'prop-types';
 
 const UIPage = ({children}) => <>{children}</>;
 UIPage.propTypes = {
+    /** Element id */
+    id: PropTypes.string,
     /** Page name */
     name: PropTypes.string.isRequired,
     /** Children */
@@ -18,6 +20,7 @@ UIPage.propTypes = {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,
     ]),
+    value: PropTypes.string.isRequired,
     /** Prop passed by Dash */
     setProps: PropTypes.func
 }

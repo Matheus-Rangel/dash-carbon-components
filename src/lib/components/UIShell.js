@@ -19,7 +19,8 @@ import getProps from "../util/getProps";
 export default class UIShell extends Component {
     constructor(props) {
         super(props);
-        this.state = {currentPage: 0, content: ''}
+        this.state = {currentPage: 0, content: ''};
+        this.updateValue(0);
     }
     parseChildrenToArray() {
         if (!this.props.children) {
@@ -34,6 +35,12 @@ export default class UIShell extends Component {
     }
     navigate(index){
         this.setState({currentPage: index })
+        this.updateValue(index)
+    }
+    updateValue(index) {
+        const page = this.parseChildrenToArray(this.props.children)[index];
+        const props = getProps(page);
+        this.props.setProps({value: props.value})
     }
     getMenuItems(pages) {
         return pages.map((child, index) => {
@@ -99,6 +106,9 @@ export default class UIShell extends Component {
     }
 }
 UIShell.propTypes = {
+    /** Element id */
+    id: PropTypes.string,
+    value: PropTypes.string,
     /** Plataform Name */
     name: PropTypes.string.isRequired,
     /** Pages */

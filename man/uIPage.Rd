@@ -10,13 +10,17 @@ ExampleComponent is an example component. It takes a property, `label`, and disp
 }
 
 \usage{
-uIPage(children=NULL, name=NULL)
+uIPage(children=NULL, id=NULL, name=NULL, value=NULL)
 }
 
 \arguments{
 \item{children}{List of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number. Children}
 
+\item{id}{Character. Element id}
+
 \item{name}{Character. Page name}
+
+\item{value}{Character. }
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

@@ -16,10 +16,12 @@ It renders an input with the property `value`
 which is editable by the user.
 Keyword arguments:
 - `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional): Children
+- `id` (String; optional): Element id
 - `name` (String; required): Page name
+- `value` (String; required)
 """
 function uipage(; kwargs...)
-        available_props = Symbol[:children, :name]
+        available_props = Symbol[:children, :id, :name, :value]
         wild_props = Symbol[]
         return Component("uipage", "UIPage", "dash_carbon_components", available_props, wild_props; kwargs...)
 end

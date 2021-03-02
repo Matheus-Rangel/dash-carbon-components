@@ -228,6 +228,13 @@
     "displayName": "UIPage",
     "methods": [],
     "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Element id"
+      },
       "name": {
         "type": {
           "name": "string"
@@ -253,6 +260,13 @@
         "required": false,
         "description": "Children"
       },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
       "setProps": {
         "type": {
           "name": "func"
@@ -275,6 +289,18 @@
       },
       {
         "name": "navigate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "updateValue",
         "docblock": null,
         "modifiers": [],
         "params": [
@@ -311,6 +337,20 @@
       }
     ],
     "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Element id"
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
       "name": {
         "type": {
           "name": "string"

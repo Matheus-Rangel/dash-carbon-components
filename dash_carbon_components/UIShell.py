@@ -9,14 +9,16 @@ UIShell is a default layout with the header and a sidebar
 
 Keyword arguments:
 - children (list of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional): Pages
+- id (string; optional): Element id
+- value (string; optional)
 - name (string; required): Plataform Name"""
     @_explicitize_args
-    def __init__(self, children=None, name=Component.REQUIRED, **kwargs):
-        self._prop_names = ['children', 'name']
+    def __init__(self, children=None, id=Component.UNDEFINED, value=Component.UNDEFINED, name=Component.REQUIRED, **kwargs):
+        self._prop_names = ['children', 'id', 'value', 'name']
         self._type = 'UIShell'
         self._namespace = 'dash_carbon_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'name']
+        self.available_properties = ['children', 'id', 'value', 'name']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
