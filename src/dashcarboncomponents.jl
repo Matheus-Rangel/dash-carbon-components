@@ -5,7 +5,12 @@ using Dash
 const resources_path = realpath(joinpath( @__DIR__, "..", "deps"))
 const version = "0.0.1"
 
+include("column.jl")
+include("grid.jl")
+include("row.jl")
 include("slider.jl")
+include("uipage.jl")
+include("uishell.jl")
 
 function __init__()
     DashBase.register_package(

@@ -1,7 +1,5 @@
 /* eslint no-magic-numbers: 0 */
 import React, {Component} from 'react';
-
-import { DashCarbonComponents } from '../lib';
 import Slider from "../lib/components/Slider";
 import '../index.scss'
 export default class App extends Component {

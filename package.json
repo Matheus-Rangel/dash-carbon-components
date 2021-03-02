@@ -16,6 +16,7 @@
   "author": "Matheus Rangel <matheus.rangel@ibm.com>",
   "license": "",
   "dependencies": {
+    "@carbon/icons-react": "^10.26.0",
     "carbon-components": "^10.29.0",
     "carbon-components-react": "^7.29.0",
     "carbon-icons": "^7.0.7",

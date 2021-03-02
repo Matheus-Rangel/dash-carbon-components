@@ -59,6 +59,8 @@ Slider.propTypes = {
     step: PropTypes.number.isRequired,
     /** The step factor for Shift+arrow keys */
     stepMultiplier: PropTypes.number,
+    /** Prop passed by Dash */
+    setProps: PropTypes.func
 }
 Slider.defaultProps = {
     disabled: false,
