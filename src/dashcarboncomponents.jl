@@ -9,7 +9,6 @@ include("column.jl")
 include("grid.jl")
 include("row.jl")
 include("slider.jl")
-include("uipage.jl")
 include("uishell.jl")
 
 function __init__()

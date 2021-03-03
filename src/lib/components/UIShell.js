@@ -1,78 +1,43 @@
 import React, {Component} from 'react';
-import cx from 'classnames';
 import PropTypes from 'prop-types';
 import {
-    HeaderContainer, SideNavLink, Header,
-    HeaderName,
+    Header,
+    HeaderContainer,
     HeaderMenuButton,
+    HeaderName,
     SideNav,
     SideNavItems,
-    SkipToContent, Content
+    SideNavLink,
+    SkipToContent
 } from 'carbon-components-react'
-import {is} from 'ramda'
-import getProps from "../util/getProps";
+import updateLocation from "../internal/updateLocation";
+
 /**
  * UIShell is a default layout with the header and a sidebar
  */
-
-
-export default class UIShell extends Component {
+class UIShell extends Component {
     constructor(props) {
         super(props);
-        this.state = {currentPage: 0, content: ''};
-        this.updateValue(0);
+        this.state = {windowLocation: window.location.pathname}
     }
-    parseChildrenToArray() {
-        if (!this.props.children) {
-            return []
-        }
-        if (this.props.children && !is(Array, this.props.children)) {
-            // if dcc.Tabs.children contains just one single element, it gets passed as an object
-            // instead of an array - so we put in in a array ourselves!
-            return [this.props.children];
-        }
-        return this.props.children;
-    }
-    navigate(index){
-        this.setState({currentPage: index })
-        this.updateValue(index)
-    }
-    updateValue(index) {
-        const page = this.parseChildrenToArray(this.props.children)[index];
-        const props = getProps(page);
-        this.props.setProps({value: props.value})
-    }
+
     getMenuItems(pages) {
-        return pages.map((child, index) => {
-            console.log(child);
-            const props = getProps(child)
+        return pages.map((page, index) => {
             return (
-                <SideNavLink key={index} onClick={() => this.navigate(index)} isActive={index === this.state.currentPage}>{props.name}</SideNavLink>
+                <SideNavLink key={index} href={page.url} onClick={(e) => updateLocation(e, page.url)}
+                             isActive={this.state.windowLocation === page.url}>{page.name}</SideNavLink>
             )
         });
     }
-    getContent(pages) {
-        if(pages.length > 0) {
-            const style = {
-                height: '100%',
-                minHeight: '100vh',
-                margin: '0',
-                width: '100%',
-                backgroundColor: '#f4f4f4'
-            }
-            return(
-            <Content id='main-content' style={style}>
-                {pages[this.state.currentPage]}
-            </Content>
-            );
-        }
-        return '';
+
+    componentDidMount() {
+        window.addEventListener(
+            '_dashprivate_pushstate',
+            () => this.setState({windowLocation: window.location.pathname}))
     }
 
     render() {
-        const {name, children} = this.props;
-        const pages = this.parseChildrenToArray(children);
-        console.log(pages)
+        const {pages} = this.props;
         return (
             <HeaderContainer render={({isSideNavExpanded, onClickSideNavExpand}) => (
                 <>
@@ -80,12 +45,12 @@ export default class UIShell extends Component {
                         <SkipToContent/>
                         {pages.length > 0 &&
                         <HeaderMenuButton
-                          aria-label="Open menu"
-                          onClick={onClickSideNavExpand}
-                          isActive={isSideNavExpanded}
+                            aria-label="Open menu"
+                            onClick={onClickSideNavExpand}
+                            isActive={isSideNavExpanded}
                         />
                         }
-                        <HeaderName href={'#'}>
+                        <HeaderName href={'/'}>
                             {name}
                         </HeaderName>
                         {pages.length > 0 &&
@@ -98,24 +63,55 @@ export default class UIShell extends Component {
                         </SideNav>
                         }
                     </Header>
-                    {this.getContent(pages)}
+                    {/* <UIShellContent loading_state={loading_state}>*/}
+                    {/*    {children}*/}
+                    {/* </UIShellContent>*/}
                 </>
             )}>
             </HeaderContainer>
         );
     }
 }
+
 UIShell.propTypes = {
     /** Element id */
     id: PropTypes.string,
-    value: PropTypes.string,
-    /** Plataform Name */
+    /** Platform Name */
     name: PropTypes.string.isRequired,
-    /** Pages */
+    /** Content of the dashboard */
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node,
     ]),
+    /** If the application has multiple pages */
+    pages: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string,
+            url: PropTypes.string,
+        })
+    ),
     /** Prop passed by Dash */
-    setProps: PropTypes.func
+    setProps: PropTypes.func,
+    /**
+     * Object that holds the loading state object coming from dash-renderer
+     */
+    loading_state: PropTypes.shape({
+        /**
+         * Determines if the component is loading or not
+         */
+        is_loading: PropTypes.bool,
+        /**
+         * Holds which property is loading
+         */
+        prop_name: PropTypes.string,
+        /**
+         * Holds the name of the component that is loading
+         */
+        component_name: PropTypes.string,
+    }),
 }
+
+UIShell.defaultProps = {
+    pages: []
+}
+
+export default UIShell;

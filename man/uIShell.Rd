@@ -10,17 +10,27 @@ UIShell is a default layout with the header and a sidebar
 }
 
 \usage{
-uIShell(children=NULL, id=NULL, value=NULL, name=NULL)
+uIShell(children=NULL, id=NULL, name=NULL, pages=NULL,
+loading_state=NULL)
 }
 
 \arguments{
-\item{children}{List of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number. Pages}
+\item{children}{List of a list of or a singular dash component, string or numbers. Content of the dashboard}
 
 \item{id}{Character. Element id}
 
-\item{value}{Character. }
+\item{name}{Character. Platform Name}
 
-\item{name}{Character. Plataform Name}
+\item{pages}{List of lists containing elements 'name', 'url'.
+those elements have the following types:
+  - name (character; optional)
+  - url (character; optional)s. If the application has multiple pages}
+
+\item{loading_state}{Lists containing elements 'is_loading', 'prop_name', 'component_name'.
+those elements have the following types:
+  - is_loading (logical; optional): determines if the component is loading or not
+  - prop_name (character; optional): holds which property is loading
+  - component_name (character; optional): holds the name of the component that is loading. Object that holds the loading state object coming from dash-renderer}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

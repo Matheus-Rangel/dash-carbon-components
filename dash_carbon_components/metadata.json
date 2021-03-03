@@ -223,108 +223,12 @@
       }
     }
   },
-  "src/lib/components/UIPage.js": {
-    "description": "ExampleComponent is an example component.\nIt takes a property, `label`, and\ndisplays it.\nIt renders an input with the property `value`\nwhich is editable by the user.",
-    "displayName": "UIPage",
-    "methods": [],
-    "props": {
-      "id": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Element id"
-      },
-      "name": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": "Page name"
-      },
-      "children": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "arrayOf",
-              "value": {
-                "name": "node"
-              }
-            },
-            {
-              "name": "node"
-            }
-          ]
-        },
-        "required": false,
-        "description": "Children"
-      },
-      "value": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": ""
-      },
-      "setProps": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Prop passed by Dash"
-      }
-    }
-  },
   "src/lib/components/UIShell.js": {
     "description": "UIShell is a default layout with the header and a sidebar",
     "displayName": "UIShell",
     "methods": [
       {
-        "name": "parseChildrenToArray",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "navigate",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "index",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "updateValue",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "index",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
         "name": "getMenuItems",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "pages",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "getContent",
         "docblock": null,
         "modifiers": [],
         "params": [
@@ -344,19 +248,12 @@
         "required": false,
         "description": "Element id"
       },
-      "value": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
       "name": {
         "type": {
           "name": "string"
         },
         "required": true,
-        "description": "Plataform Name"
+        "description": "Platform Name"
       },
       "children": {
         "type": {
@@ -367,14 +264,35 @@
               "value": {
                 "name": "node"
               }
-            },
-            {
-              "name": "node"
             }
           ]
         },
         "required": false,
-        "description": "Pages"
+        "description": "Content of the dashboard"
+      },
+      "pages": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "name": {
+                "name": "string",
+                "required": false
+              },
+              "url": {
+                "name": "string",
+                "required": false
+              }
+            }
+          }
+        },
+        "required": false,
+        "description": "If the application has multiple pages",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
       },
       "setProps": {
         "type": {
@@ -382,6 +300,30 @@
         },
         "required": false,
         "description": "Prop passed by Dash"
+      },
+      "loading_state": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "is_loading": {
+              "name": "bool",
+              "description": "Determines if the component is loading or not",
+              "required": false
+            },
+            "prop_name": {
+              "name": "string",
+              "description": "Holds which property is loading",
+              "required": false
+            },
+            "component_name": {
+              "name": "string",
+              "description": "Holds the name of the component that is loading",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "Object that holds the loading state object coming from dash-renderer"
       }
     }
   }
