@@ -8,8 +8,8 @@ app = dash.Dash(__name__, suppress_callback_exceptions=True)
 
 nav_layout = html.Div([
     dcc.Location(id='url', refresh=False),
-    html.Div(id='page-content', style={'height': 'calc(100vh - 48px)', 'background-color': '#f4f4f4', 'padding': '48px', 'margin-top': '48px'}),
     dca.UIShell(
+        id='page-content',
         name='Dashboard',
         pages=[{'name': 'Inputs', 'url': '/'}, {'name': 'Outputs', 'url': '/outputs'}],
     )

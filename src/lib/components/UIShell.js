@@ -11,6 +11,7 @@ import {
     SkipToContent
 } from 'carbon-components-react'
 import updateLocation from "../internal/updateLocation";
+import UIShellContent from "../internal/UIShellContent";
 
 /**
  * UIShell is a default layout with the header and a sidebar
@@ -37,7 +38,7 @@ class UIShell extends Component {
     }
 
     render() {
-        const {pages} = this.props;
+        const {pages, name, loading_state, children} = this.props;
         return (
             <HeaderContainer render={({isSideNavExpanded, onClickSideNavExpand}) => (
                 <>
@@ -63,9 +64,9 @@ class UIShell extends Component {
                         </SideNav>
                         }
                     </Header>
-                    {/* <UIShellContent loading_state={loading_state}>*/}
-                    {/*    {children}*/}
-                    {/* </UIShellContent>*/}
+                     <UIShellContent loading_state={loading_state}>
+                        {children}
+                     </UIShellContent>
                 </>
             )}>
             </HeaderContainer>
