@@ -5,14 +5,12 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Slider(Component):
     """A Slider component.
-ExampleComponent is an example component.
-It takes a property, `label`, and
-displays it.
-It renders an input with the property `value`
-which is editable by the user.
+Slider
 
 Keyword arguments:
-- id (string; optional): Slider id
+- id (string; optional): The ID of this component, used to identify dash components
+in callbacks. The ID needs to be unique across all of the
+components in an app.
 - name (string; optional): Form item name
 - inputType (string; default 'number'): The form element type
 - ariaLabelInput (string; default ''): The ARIA label for the <input>

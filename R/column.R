@@ -1,8 +1,8 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-column <- function(children=NULL, columnSizes=NULL, offsetSizes=NULL) {
+column <- function(children=NULL, style=NULL, id=NULL, className=NULL, columnSizes=NULL, offsetSizes=NULL) {
     
-    props <- list(children=children, columnSizes=columnSizes, offsetSizes=offsetSizes)
+    props <- list(children=children, style=style, id=id, className=className, columnSizes=columnSizes, offsetSizes=offsetSizes)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -10,7 +10,7 @@ column <- function(children=NULL, columnSizes=NULL, offsetSizes=NULL) {
         props = props,
         type = 'Column',
         namespace = 'dash_carbon_components',
-        propNames = c('children', 'columnSizes', 'offsetSizes'),
+        propNames = c('children', 'style', 'id', 'className', 'columnSizes', 'offsetSizes'),
         package = 'dashCarbonComponents'
         )
 

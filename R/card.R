@@ -1,16 +1,16 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-row <- function(children=NULL, style=NULL, id=NULL, className=NULL) {
+card <- function(children=NULL, style=NULL, id=NULL, className=NULL, title=NULL) {
     
-    props <- list(children=children, style=style, id=id, className=className)
+    props <- list(children=children, style=style, id=id, className=className, title=title)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
     component <- list(
         props = props,
-        type = 'Row',
+        type = 'Card',
         namespace = 'dash_carbon_components',
-        propNames = c('children', 'style', 'id', 'className'),
+        propNames = c('children', 'style', 'id', 'className', 'title'),
         package = 'dashCarbonComponents'
         )
 

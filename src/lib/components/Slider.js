@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Slider as CarbonSlider} from 'carbon-components-react'
+
 /**
- * ExampleComponent is an example component.
- * It takes a property, `label`, and
- * displays it.
- * It renders an input with the property `value`
- * which is editable by the user.
+ * Slider
  */
 export default class Slider extends Component {
     render() {
-        const {id, name, inputType, ariaLabelInput, disabled, light, hideTextInput, min, max, value, step,
-            stepMultiplier,
-            setProps} = this.props;
+        const {
+            id, name, inputType, ariaLabelInput, disabled, light, hideTextInput, min, max, value, step,
+            stepMultiplier, labelText, setProps
+        } = this.props;
         return (
             <CarbonSlider
                 id={id}
+                labelText={labelText}
                 name={name}
                 inputType={inputType}
                 ariaLabelInput={ariaLabelInput}
@@ -28,12 +27,16 @@ export default class Slider extends Component {
                 step={step}
                 stepMultiplier={stepMultiplier}
                 onRelease={({value}) => setProps({value})}
-                />
+            />
         );
     }
-}
+};
 Slider.propTypes = {
-    /** Slider id */
+    /**
+     * The ID of this component, used to identify dash components
+     * in callbacks. The ID needs to be unique across all of the
+     * components in an app.
+     */
     id: PropTypes.string,
     /** Form item name */
     name: PropTypes.string,
@@ -60,7 +63,7 @@ Slider.propTypes = {
     /** The step factor for Shift+arrow keys */
     stepMultiplier: PropTypes.number,
     /** Prop passed by Dash */
-    setProps: PropTypes.func
+    setProps: PropTypes.func,
 }
 Slider.defaultProps = {
     disabled: false,

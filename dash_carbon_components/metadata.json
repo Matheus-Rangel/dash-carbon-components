@@ -1,9 +1,23 @@
 {
-  "src/lib/components/Column.js": {
-    "description": "",
-    "displayName": "Column",
+  "src/lib/components/Card.js": {
+    "description": "Card",
+    "displayName": "Card",
     "methods": [],
     "props": {
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "The inline styles"
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID of this component, used to identify dash components\nin callbacks. The ID needs to be unique across all of the\ncomponents in an app."
+      },
       "children": {
         "type": {
           "name": "union",
@@ -20,7 +34,71 @@
           ]
         },
         "required": false,
-        "description": ""
+        "description": "The children of the element"
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The class of the element"
+      },
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Title of the card"
+      }
+    }
+  },
+  "src/lib/components/Column.js": {
+    "description": "Row Column",
+    "displayName": "Column",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "The inline styles"
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID of this component, used to identify dash components\nin callbacks. The ID needs to be unique across all of the\ncomponents in an app."
+      },
+      "children": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "node"
+              }
+            },
+            {
+              "name": "node"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The children of the element"
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The class of the element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
       },
       "columnSizes": {
         "type": {
@@ -30,7 +108,11 @@
           }
         },
         "required": false,
-        "description": ""
+        "description": "The size of the column with the display size, sm-4, lg-16 ...",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
       },
       "offsetSizes": {
         "type": {
@@ -40,15 +122,163 @@
           }
         },
         "required": false,
-        "description": ""
+        "description": "The size of the offset with the display size, lg-2 ...",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/DatePicker.js": {
+    "description": "",
+    "displayName": "DatePicker",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID of this component, used to identify dash components\nin callbacks. The ID needs to be unique across all of the\ncomponents in an app."
+      },
+      "dateFormat": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The date format."
+      },
+      "light": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "True to use the light version."
+      },
+      "locale": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The language locale used to format the days of the week, months, and numbers.\nThe full list of supported locales can be found here https://github.com/flatpickr/flatpickr/tree/master/src/l10n"
+      },
+      "maxDate": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The maximum date that a user can pick to."
+      },
+      "minDate": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The minimum date that a user can start picking from."
+      },
+      "short": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "True to use the short version."
+      },
+      "value": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "string"
+              }
+            }
+          ]
+        },
+        "required": false,
+        "description": "The value of the date value provided to flatpickr"
+      },
+      "datePickerType": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'range'",
+              "computed": false
+            },
+            {
+              "value": "'single'",
+              "computed": false
+            },
+            {
+              "value": "'simple'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "The type of the date picker"
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Prop passed by Dash"
+      },
+      "inputs": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "id": {
+                "name": "string",
+                "required": false
+              },
+              "placeholder": {
+                "name": "string",
+                "required": false
+              },
+              "labelText": {
+                "name": "string",
+                "required": false
+              }
+            }
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
       }
     }
   },
   "src/lib/components/Grid.js": {
-    "description": "",
+    "description": "Carbon Grid",
     "displayName": "Grid",
     "methods": [],
     "props": {
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "The inline styles"
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID of this component, used to identify dash components\nin callbacks. The ID needs to be unique across all of the\ncomponents in an app."
+      },
       "children": {
         "type": {
           "name": "union",
@@ -65,15 +295,36 @@
           ]
         },
         "required": false,
-        "description": ""
+        "description": "The children of the element"
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The class of the element"
       }
     }
   },
   "src/lib/components/Row.js": {
-    "description": "",
+    "description": "Grid Row",
     "displayName": "Row",
     "methods": [],
     "props": {
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "The inline styles"
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID of this component, used to identify dash components\nin callbacks. The ID needs to be unique across all of the\ncomponents in an app."
+      },
       "children": {
         "type": {
           "name": "union",
@@ -90,12 +341,19 @@
           ]
         },
         "required": false,
-        "description": ""
+        "description": "The children of the element"
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The class of the element"
       }
     }
   },
   "src/lib/components/Slider.js": {
-    "description": "ExampleComponent is an example component.\nIt takes a property, `label`, and\ndisplays it.\nIt renders an input with the property `value`\nwhich is editable by the user.",
+    "description": "Slider",
     "displayName": "Slider",
     "methods": [],
     "props": {
@@ -104,7 +362,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "Slider id"
+        "description": "The ID of this component, used to identify dash components\nin callbacks. The ID needs to be unique across all of the\ncomponents in an app."
       },
       "name": {
         "type": {

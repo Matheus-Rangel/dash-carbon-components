@@ -2,13 +2,17 @@
 import Slider from "./components/Slider";
 import UIShell from "./components/UIShell";
 import Column from "./components/Column";
-import Row from './components/Row'
-import Grid from './components/Grid'
+import Row from './components/Row';
+import Grid from './components/Grid';
+import Card from './components/Card'
+import DatePicker from "./components/DatePicker";
 import '../index.scss'
 export {
+    Card,
+    Column,
+    DatePicker,
+    Grid,
+    Row,
     Slider,
     UIShell,
-    Column,
-    Row,
-    Grid
 };

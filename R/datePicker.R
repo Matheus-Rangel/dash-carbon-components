@@ -1,0 +1,18 @@
+# AUTO GENERATED FILE - DO NOT EDIT
+
+datePicker <- function(id=NULL, dateFormat=NULL, light=NULL, locale=NULL, maxDate=NULL, minDate=NULL, short=NULL, value=NULL, datePickerType=NULL, inputs=NULL) {
+    
+    props <- list(id=id, dateFormat=dateFormat, light=light, locale=locale, maxDate=maxDate, minDate=minDate, short=short, value=value, datePickerType=datePickerType, inputs=inputs)
+    if (length(props) > 0) {
+        props <- props[!vapply(props, is.null, logical(1))]
+    }
+    component <- list(
+        props = props,
+        type = 'DatePicker',
+        namespace = 'dash_carbon_components',
+        propNames = c('id', 'dateFormat', 'light', 'locale', 'maxDate', 'minDate', 'short', 'value', 'datePickerType', 'inputs'),
+        package = 'dashCarbonComponents'
+        )
+
+    structure(component, class = c('dash_component', 'list'))
+}

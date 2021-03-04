@@ -6,13 +6,11 @@ export slider
     slider(;kwargs...)
 
 A Slider component.
-ExampleComponent is an example component.
-It takes a property, `label`, and
-displays it.
-It renders an input with the property `value`
-which is editable by the user.
+Slider
 Keyword arguments:
-- `id` (String; optional): Slider id
+- `id` (String; optional): The ID of this component, used to identify dash components
+in callbacks. The ID needs to be unique across all of the
+components in an app.
 - `name` (String; optional): Form item name
 - `inputType` (String; optional): The form element type
 - `ariaLabelInput` (String; optional): The ARIA label for the <input>

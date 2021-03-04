@@ -29,6 +29,7 @@ UIShellContent.propTypes = {
          * Determines if the component is loading or not
          */
         is_loading: PropTypes.bool,
+
         /**
          * Holds which property is loading
          */

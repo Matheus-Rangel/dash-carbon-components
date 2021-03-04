@@ -1,17 +1,17 @@
 % Auto-generated: do not edit by hand
-\name{column}
+\name{card}
 
-\alias{column}
+\alias{card}
 
-\title{Column component}
+\title{Card component}
 
 \description{
-Row Column
+Card
 }
 
 \usage{
-column(children=NULL, style=NULL, id=NULL, className=NULL,
-columnSizes=NULL, offsetSizes=NULL)
+card(children=NULL, style=NULL, id=NULL, className=NULL,
+title=NULL)
 }
 
 \arguments{
@@ -25,9 +25,7 @@ components in an app.}
 
 \item{className}{Character. The class of the element}
 
-\item{columnSizes}{List of characters. The size of the column with the display size, sm-4, lg-16 ...}
-
-\item{offsetSizes}{List of characters. The size of the offset with the display size, lg-2 ...}
+\item{title}{Character. Title of the card}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

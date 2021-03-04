@@ -1,8 +1,8 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-grid <- function(children=NULL) {
+grid <- function(children=NULL, style=NULL, id=NULL, className=NULL) {
     
-    props <- list(children=children)
+    props <- list(children=children, style=style, id=id, className=className)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -10,7 +10,7 @@ grid <- function(children=NULL) {
         props = props,
         type = 'Grid',
         namespace = 'dash_carbon_components',
-        propNames = c('children'),
+        propNames = c('children', 'style', 'id', 'className'),
         package = 'dashCarbonComponents'
         )
 

@@ -1,9 +1,9 @@
 import dash
-from dash.dependencies import Output, Input
 import dash_carbon_components as dca
 import dash_core_components as dcc
 import dash_html_components as html
-import time
+from dash.dependencies import Output, Input
+
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
 
 nav_layout = html.Div([
@@ -14,22 +14,40 @@ nav_layout = html.Div([
         pages=[{'name': 'Inputs', 'url': '/'}, {'name': 'Outputs', 'url': '/outputs'}],
     )
 ])
-index_page = html.Div([
-    dcc.Link('Go to Page 1', href='/'),
-    html.Br(),
-    dcc.Link('Go to Page 2', href='/outputs'),
-])
 
 inputs_layout = dca.Grid(children=[
     dca.Row(children=[
-        dca.Column(columnSizes=['lg-13'], offsetSizes=['lg-3'], children=[
-            dca.Slider(
-                id='slider',
-                labelText='Demo',
-                max=100,
-                min=0,
-                step=1,
-                value=50)
+        dca.Column(columnSizes=['lg-4'], offsetSizes=['lg-2'], children=[
+            dca.Card(title='Slider', children=[
+                dca.Slider(
+                    id='slider',
+                    labelText='Demo',
+                    max=100,
+                    min=0,
+                    step=1,
+                    value=50,
+                ),
+            ])
+        ]),
+        dca.Column(columnSizes=['lg-6'], children=[
+            dca.Card(title='Slider', children=[
+                dca.DatePicker(
+                    id='date-picker',
+                    datePickerType='range',
+                    inputs=[
+                        {
+                            'placeholder': 'mm/dd/yyyy',
+                            'labelText': 'Start Date',
+                            'id': 'start-date'
+                        },
+                        {
+                            'placeholder': 'mm/dd/yyyy',
+                            'labelText': 'End Date',
+                            'id': 'end-date'
+                        },
+                    ]
+                ),
+            ])
         ])
     ])
 ])
@@ -47,11 +65,6 @@ outputs_layout = dca.Grid(children=[
     ])
 ])
 
-pages = {
-    '/': inputs_layout,
-    '/outputs': outputs_layout
-}
-
 app.layout = html.Div([
     nav_layout
 ])
@@ -60,6 +73,12 @@ app.validation_layout = html.Div([
     inputs_layout,
     outputs_layout
 ])
+
+pages = {
+    '/': inputs_layout,
+    '/outputs': outputs_layout
+}
+
 
 @app.callback(
     Output('page-content', 'children'),

@@ -1,0 +1,21 @@
+.card-title {
+  margin-bottom: 8px;
+  display: flex;
+  align-content: center;
+  font-weight: bold;
+}
+.card-body {
+  width: 100%;
+  margin-top: 8px;
+}
+.card {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 16px;
+}
+.card-divider {
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  height: 1px;
+  background-color: #eeeeee;
+}
