@@ -17,38 +17,40 @@ nav_layout = html.Div([
 
 inputs_layout = dca.Grid(children=[
     dca.Row(children=[
-        dca.Column(columnSizes=['lg-4'], offsetSizes=['lg-2'], children=[
-            dca.Card(title='Slider', children=[
-                dca.Slider(
-                    id='slider',
-                    labelText='Demo',
-                    max=100,
-                    min=0,
-                    step=1,
-                    value=50,
-                ),
+        dca.Column(columnSizes=['lg-10'], offsetSizes=['lg-2'], children=[
+            dca.Card(title='Inputs', children=[
+                html.Div(style={'display': 'flex', 'flexDirection': 'row'}, children=[
+                    dca.Slider(
+                        id='slider',
+                        labelText='Slider',
+                        max=100,
+                        min=0,
+                        step=1,
+                        value=50,
+                    ),
+                    dca.DatePicker(
+                        id='date-picker',
+                        datePickerType='range',
+                        inputs=[
+                            {
+                                'placeholder': 'mm/dd/yyyy',
+                                'labelText': 'Start Date',
+                                'id': 'start-date'
+                            },
+                            {
+                                'placeholder': 'mm/dd/yyyy',
+                                'labelText': 'End Date',
+                                'id': 'end-date'
+                            },
+                        ]
+                    ),
+                    html.Div(style={'width': '200px'}, children=[
+                        dca.MultiSelect(id='multiselect', titleText='Fruits', items=['Apple', 'Orange', 'Grape'],
+                                        label='Fruits')
+                    ])
+                ])
             ])
         ]),
-        dca.Column(columnSizes=['lg-6'], children=[
-            dca.Card(title='Slider', children=[
-                dca.DatePicker(
-                    id='date-picker',
-                    datePickerType='range',
-                    inputs=[
-                        {
-                            'placeholder': 'mm/dd/yyyy',
-                            'labelText': 'Start Date',
-                            'id': 'start-date'
-                        },
-                        {
-                            'placeholder': 'mm/dd/yyyy',
-                            'labelText': 'End Date',
-                            'id': 'end-date'
-                        },
-                    ]
-                ),
-            ])
-        ])
     ])
 ])
 outputs_layout = dca.Grid(children=[

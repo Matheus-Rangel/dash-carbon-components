@@ -306,6 +306,151 @@
       }
     }
   },
+  "src/lib/components/MultiSelect.js": {
+    "description": "",
+    "displayName": "MultiSelect",
+    "methods": [],
+    "props": {
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disable the control"
+      },
+      "locale": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Specify the locale of the control.\nUsed for the default compareItems used for sorting the list of items in the control."
+      },
+      "initialSelectedItems": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "Allow users to pass in arbitrary items from their collection that are pre-selected"
+      },
+      "light": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "true to use the light version."
+      },
+      "selectionFeedback": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'top'",
+              "computed": false
+            },
+            {
+              "value": "'fixed'",
+              "computed": false
+            },
+            {
+              "value": "'top-after-reopen'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specify feedback (mode) of the selection.\ntop: selected item jumps to top\nfixed: selected item stays at it's position\ntop-after-reopen: selected item jump to top after reopen dropdown\ndefault top-after-reopen"
+      },
+      "direction": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'bottom, top'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specify the direction of the multiselect dropdown. Can be either top or bottom.\ndefault bottom"
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Id of the element"
+      },
+      "invalid": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Is the current selection invalid."
+      },
+      "invalidText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The text to show if it is invalid."
+      },
+      "items": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": true,
+        "description": "List of items"
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Generic label that will be used as the textual representation of what this field is for"
+      },
+      "size": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'sm'",
+              "computed": false
+            },
+            {
+              "value": "'lg'",
+              "computed": false
+            },
+            {
+              "value": "'xl'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specify the size of the ListBox. Currently supports either sm, lg or xl as an option."
+      },
+      "titleText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Provide text to be used in a <label> element that is tied to the multiselect via ARIA attributes."
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Prop passed by Dash"
+      }
+    }
+  },
   "src/lib/components/Row.js": {
     "description": "Grid Row",
     "displayName": "Row",
