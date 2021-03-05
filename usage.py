@@ -17,7 +17,7 @@ nav_layout = html.Div([
 
 inputs_layout = dca.Grid(children=[
     dca.Row(children=[
-        dca.Column(columnSizes=['lg-10'], offsetSizes=['lg-2'], children=[
+        dca.Column(columnSizes=['lg-4 md-5'], offsetSizes=['lg-2'], children=[
             dca.Card(title='Inputs', children=[
                 html.Div(style={'display': 'flex', 'flexDirection': 'row'}, children=[
                     dca.Slider(
@@ -28,27 +28,31 @@ inputs_layout = dca.Grid(children=[
                         step=1,
                         value=50,
                     ),
-                    dca.DatePicker(
-                        id='date-picker',
-                        datePickerType='range',
-                        inputs=[
-                            {
-                                'placeholder': 'mm/dd/yyyy',
-                                'labelText': 'Start Date',
-                                'id': 'start-date'
-                            },
-                            {
-                                'placeholder': 'mm/dd/yyyy',
-                                'labelText': 'End Date',
-                                'id': 'end-date'
-                            },
-                        ]
-                    ),
-                    html.Div(style={'width': '200px'}, children=[
-                        dca.MultiSelect(id='multiselect', titleText='Fruits', items=['Apple', 'Orange', 'Grape'],
-                                        label='Fruits')
-                    ])
                 ])
+            ])
+        ]),
+        dca.Column(columnSizes=['lg-4 md-5'], children=[
+            dca.Card(title='Date Picker', style={'display': 'flex', 'justify-content': 'center'}, children=[
+                dca.DatePickerRange(
+                    id='date-picker',
+                    placeholder='mm/dd/yyyy',
+                    startLabel='Start Date',
+                    endLabel='End Date',
+                ),
+            ])
+        ]),
+    ]),
+    dca.Row(style={'marginTop': '24px'}, children=[
+        dca.Column(columnSizes=['lg-3 md-5'], offsetSizes=['lg-2'], children=[
+            dca.Card(title='Multiselect', children=[
+                dca.MultiSelect(id='multiselect', titleText='Fruits', items=['Apple', 'Orange', 'Grape'],
+                                label='Fruits')
+            ])
+        ]),
+        dca.Column(columnSizes=['lg-3 md-5'], children=[
+            dca.Card(title='Multiselect Filterable', children=[
+                dca.MultiSelectFilterable(id='multiselect', titleText='Fruits', items=['Apple', 'Orange', 'Grape'],
+                                          label='Fruits')
             ])
         ]),
     ])

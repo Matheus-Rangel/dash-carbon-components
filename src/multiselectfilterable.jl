@@ -1,11 +1,11 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-export multiselect
+export multiselectfilterable
 
 """
-    multiselect(;kwargs...)
+    multiselectfilterable(;kwargs...)
 
-A MultiSelect component.
+A MultiSelectFilterable component.
 MultiSelect
 Keyword arguments:
 - `disabled` (Bool; optional): Disable the control
@@ -28,9 +28,9 @@ default bottom
 - `size` (a value equal to: 'sm', 'lg', 'xl'; optional): Specify the size of the ListBox. Currently supports either sm, lg or xl as an option.
 - `titleText` (String; optional): Provide text to be used in a <label> element that is tied to the multiselect via ARIA attributes.
 """
-function multiselect(; kwargs...)
+function multiselectfilterable(; kwargs...)
         available_props = Symbol[:disabled, :locale, :initialSelectedItems, :light, :selectionFeedback, :direction, :id, :invalid, :invalidText, :items, :label, :size, :titleText]
         wild_props = Symbol[]
-        return Component("multiselect", "MultiSelect", "dash_carbon_components", available_props, wild_props; kwargs...)
+        return Component("multiselectfilterable", "MultiSelectFilterable", "dash_carbon_components", available_props, wild_props; kwargs...)
 end
 

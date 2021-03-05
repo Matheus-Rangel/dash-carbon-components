@@ -5,20 +5,20 @@ import PropTypes from 'prop-types';
 /**
  * MultiSelect
  */
-const MultiSelect = ({
+const MultiSelectFilterable = ({
                          disabled, locale, initialSelectedItems, light, selectionFeedback, direction, id, invalid,
                          invalidText, items, label, setProps, size, titleText
                      }) => {
 
     return (
-        <MultiSelectCarbon disabled={disabled} locale={locale} initialSelectedItems={initialSelectedItems} light={light}
+        <MultiSelectCarbon.Filterable disabled={disabled} locale={locale} initialSelectedItems={initialSelectedItems} light={light}
                            selectionFeedback={selectionFeedback} direction={direction} id={id} invalid={invalid}
-                           invalidText={invalidText} items={items} label={label} setProps={setProps} size={size}
+                           invalidText={invalidText} items={items} placeholder={label} setProps={setProps} size={size}
                            titleText={titleText}
                            itemToString={(item) => item} />
     )
 };
-MultiSelect.propTypes = {
+MultiSelectFilterable.propTypes = {
     /**
      * Disable the control
      */
@@ -80,4 +80,4 @@ MultiSelect.propTypes = {
     /** Prop passed by Dash */
     setProps: PropTypes.func,
 }
-export default MultiSelect
+export default MultiSelectFilterable

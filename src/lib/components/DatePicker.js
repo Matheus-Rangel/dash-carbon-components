@@ -2,17 +2,17 @@ import React from 'react'
 import {DatePicker as DatePickerCarbon, DatePickerInput} from "carbon-components-react";
 import PropTypes from "prop-types";
 
-const DatePicker = ({inputs, id, dateFormat, light, locale, maxDate, minDate, short, value, datePickerType, setProps}) => {
+/**
+ * DatePicker
+ */
+const DatePicker = ({placeholder, labelText, id, dateFormat, light, locale, maxDate, minDate, short, value, setProps}) => {
     return (
         <DatePickerCarbon id={id} dateFormat={dateFormat} light={light} locale={locale} maxDate={maxDate}
-                          minDate={minDate} short={short} value={value} datePickerType={datePickerType}
+                          minDate={minDate} short={short} value={value} datePickerType='simple'
                           onChange={({value}) => setProps({value})}>
-            {inputs.map(input =>
-                <DatePickerInput key={input.id}
-                                 id={input.id}
-                                 placeholder={input.placeholder}
-                                 labelText={input.labelText}/>)
-            }
+            <DatePickerInput id={id}
+                             placeholder={placeholder}
+                             labelText={labelText}/>)
         </DatePickerCarbon>
     )
 }
@@ -22,10 +22,7 @@ DatePicker.propTypes = {
      * in callbacks. The ID needs to be unique across all of the
      * components in an app.
      */
-    id: PropTypes.string,
-    /**
-     The children of the element
-     */
+    id: PropTypes.string.isRequired,
     /**
      * The date format.
      */
@@ -55,19 +52,11 @@ DatePicker.propTypes = {
      * The value of the date value provided to flatpickr
      */
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
-    /**
-     * The type of the date picker
-     */
-    datePickerType: PropTypes.oneOf(['range', 'single', 'simple']),
     /** Prop passed by Dash */
     setProps: PropTypes.func,
-    inputs: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string,
-        placeholder: PropTypes.string,
-        labelText: PropTypes.string
-    })).isRequired
+    /** Placeholder */
+    placeholder: PropTypes.string.isRequired,
+    /** Label text */
+    labelText: PropTypes.string.isRequired
 }
-DatePicker.defaultProps = {
-    inputs: []
-};
 export default DatePicker;

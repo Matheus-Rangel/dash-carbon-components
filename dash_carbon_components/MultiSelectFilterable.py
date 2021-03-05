@@ -3,8 +3,8 @@
 from dash.development.base_component import Component, _explicitize_args
 
 
-class MultiSelect(Component):
-    """A MultiSelect component.
+class MultiSelectFilterable(Component):
+    """A MultiSelectFilterable component.
 MultiSelect
 
 Keyword arguments:
@@ -30,7 +30,7 @@ default bottom
     @_explicitize_args
     def __init__(self, disabled=Component.UNDEFINED, locale=Component.UNDEFINED, initialSelectedItems=Component.UNDEFINED, light=Component.UNDEFINED, selectionFeedback=Component.UNDEFINED, direction=Component.UNDEFINED, id=Component.REQUIRED, invalid=Component.UNDEFINED, invalidText=Component.UNDEFINED, items=Component.REQUIRED, label=Component.REQUIRED, size=Component.UNDEFINED, titleText=Component.UNDEFINED, **kwargs):
         self._prop_names = ['disabled', 'locale', 'initialSelectedItems', 'light', 'selectionFeedback', 'direction', 'id', 'invalid', 'invalidText', 'items', 'label', 'size', 'titleText']
-        self._type = 'MultiSelect'
+        self._type = 'MultiSelectFilterable'
         self._namespace = 'dash_carbon_components'
         self._valid_wildcard_attributes =            []
         self.available_properties = ['disabled', 'locale', 'initialSelectedItems', 'light', 'selectionFeedback', 'direction', 'id', 'invalid', 'invalidText', 'items', 'label', 'size', 'titleText']
@@ -45,4 +45,4 @@ default bottom
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')
-        super(MultiSelect, self).__init__(**args)
+        super(MultiSelectFilterable, self).__init__(**args)

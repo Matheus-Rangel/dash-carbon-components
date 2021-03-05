@@ -1,12 +1,12 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-export datepicker
+export datepickerrange
 
 """
-    datepicker(;kwargs...)
+    datepickerrange(;kwargs...)
 
-A DatePicker component.
-DatePicker
+A DatePickerRange component.
+DatePickerRange
 Keyword arguments:
 - `id` (String; required): The ID of this component, used to identify dash components
 in callbacks. The ID needs to be unique across all of the
@@ -19,12 +19,13 @@ The full list of supported locales can be found here https://github.com/flatpick
 - `minDate` (String; optional): The minimum date that a user can start picking from.
 - `short` (Bool; optional): True to use the short version.
 - `value` (String | Array of Strings; optional): The value of the date value provided to flatpickr
-- `placeholder` (String; required): Placeholder
-- `labelText` (String; required): Label text
+- `startLabel` (String; required): Start input label
+- `endLabel` (String; required): End input label
+- `placeholder` (String; required): placeholder
 """
-function datepicker(; kwargs...)
-        available_props = Symbol[:id, :dateFormat, :light, :locale, :maxDate, :minDate, :short, :value, :placeholder, :labelText]
+function datepickerrange(; kwargs...)
+        available_props = Symbol[:id, :dateFormat, :light, :locale, :maxDate, :minDate, :short, :value, :startLabel, :endLabel, :placeholder]
         wild_props = Symbol[]
-        return Component("datepicker", "DatePicker", "dash_carbon_components", available_props, wild_props; kwargs...)
+        return Component("datepickerrange", "DatePickerRange", "dash_carbon_components", available_props, wild_props; kwargs...)
 end
 

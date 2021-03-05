@@ -7,7 +7,7 @@ import './Card.scss'
  */
 const Card = ({children, title, style, className}) => {
     return (
-        <div style={style} className={'card ' + className}>
+        <div className={'card'}>
             {title &&
             <>
                 <div className={'card-title'}>
@@ -16,7 +16,7 @@ const Card = ({children, title, style, className}) => {
                 <div className={'card-divider'}/>
             </>
             }
-            <div className={'card-body'}>
+            <div style={style} className={'card-body ' + className}>
                 {children}
             </div>
         </div>
@@ -48,5 +48,8 @@ Card.propTypes = {
      * Title of the card
     */
     title: PropTypes.string
+}
+Card.defaultProps={
+    className: ''
 }
 export default Card;

@@ -1,16 +1,16 @@
 % Auto-generated: do not edit by hand
-\name{multiSelect}
+\name{multiSelectFilterable}
 
-\alias{multiSelect}
+\alias{multiSelectFilterable}
 
-\title{MultiSelect component}
+\title{MultiSelectFilterable component}
 
 \description{
 MultiSelect
 }
 
 \usage{
-multiSelect(disabled=NULL, locale=NULL, initialSelectedItems=NULL,
+multiSelectFilterable(disabled=NULL, locale=NULL, initialSelectedItems=NULL,
 light=NULL, selectionFeedback=NULL, direction=NULL, id=NULL,
 invalid=NULL, invalidText=NULL, items=NULL, label=NULL,
 size=NULL, titleText=NULL)

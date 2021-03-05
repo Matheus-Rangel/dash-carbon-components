@@ -41,7 +41,11 @@
           "name": "string"
         },
         "required": false,
-        "description": "The class of the element"
+        "description": "The class of the element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
       },
       "title": {
         "type": {
@@ -131,7 +135,7 @@
     }
   },
   "src/lib/components/DatePicker.js": {
-    "description": "",
+    "description": "DatePicker",
     "displayName": "DatePicker",
     "methods": [],
     "props": {
@@ -139,7 +143,7 @@
         "type": {
           "name": "string"
         },
-        "required": false,
+        "required": true,
         "description": "The ID of this component, used to identify dash components\nin callbacks. The ID needs to be unique across all of the\ncomponents in an app."
       },
       "dateFormat": {
@@ -202,27 +206,6 @@
         "required": false,
         "description": "The value of the date value provided to flatpickr"
       },
-      "datePickerType": {
-        "type": {
-          "name": "enum",
-          "value": [
-            {
-              "value": "'range'",
-              "computed": false
-            },
-            {
-              "value": "'single'",
-              "computed": false
-            },
-            {
-              "value": "'simple'",
-              "computed": false
-            }
-          ]
-        },
-        "required": false,
-        "description": "The type of the date picker"
-      },
       "setProps": {
         "type": {
           "name": "func"
@@ -230,33 +213,121 @@
         "required": false,
         "description": "Prop passed by Dash"
       },
-      "inputs": {
+      "placeholder": {
         "type": {
-          "name": "arrayOf",
-          "value": {
-            "name": "shape",
-            "value": {
-              "id": {
-                "name": "string",
-                "required": false
-              },
-              "placeholder": {
-                "name": "string",
-                "required": false
-              },
-              "labelText": {
-                "name": "string",
-                "required": false
-              }
-            }
-          }
+          "name": "string"
+        },
+        "required": true,
+        "description": "Placeholder"
+      },
+      "labelText": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Label text"
+      }
+    }
+  },
+  "src/lib/components/DatePickerRange.js": {
+    "description": "DatePickerRange",
+    "displayName": "DatePickerRange",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The ID of this component, used to identify dash components\nin callbacks. The ID needs to be unique across all of the\ncomponents in an app."
+      },
+      "dateFormat": {
+        "type": {
+          "name": "string"
         },
         "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "[]",
-          "computed": false
-        }
+        "description": "The date format."
+      },
+      "light": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "True to use the light version."
+      },
+      "locale": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The language locale used to format the days of the week, months, and numbers.\nThe full list of supported locales can be found here https://github.com/flatpickr/flatpickr/tree/master/src/l10n"
+      },
+      "maxDate": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The maximum date that a user can pick to."
+      },
+      "minDate": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The minimum date that a user can start picking from."
+      },
+      "short": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "True to use the short version."
+      },
+      "value": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "string"
+              }
+            }
+          ]
+        },
+        "required": false,
+        "description": "The value of the date value provided to flatpickr"
+      },
+      "startLabel": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Start input label"
+      },
+      "endLabel": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "End input label"
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "placeholder"
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Prop passed by Dash"
       }
     }
   },
@@ -302,13 +373,162 @@
           "name": "string"
         },
         "required": false,
-        "description": "The class of the element"
+        "description": "The class of the element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
       }
     }
   },
   "src/lib/components/MultiSelect.js": {
-    "description": "",
+    "description": "MultiSelect",
     "displayName": "MultiSelect",
+    "methods": [],
+    "props": {
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disable the control"
+      },
+      "locale": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Specify the locale of the control.\nUsed for the default compareItems used for sorting the list of items in the control."
+      },
+      "initialSelectedItems": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "Allow users to pass in arbitrary items from their collection that are pre-selected"
+      },
+      "light": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "true to use the light version."
+      },
+      "selectionFeedback": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'top'",
+              "computed": false
+            },
+            {
+              "value": "'fixed'",
+              "computed": false
+            },
+            {
+              "value": "'top-after-reopen'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specify feedback (mode) of the selection.\ntop: selected item jumps to top\nfixed: selected item stays at it's position\ntop-after-reopen: selected item jump to top after reopen dropdown\ndefault top-after-reopen"
+      },
+      "direction": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'bottom, top'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specify the direction of the multiselect dropdown. Can be either top or bottom.\ndefault bottom"
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Id of the element"
+      },
+      "invalid": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Is the current selection invalid."
+      },
+      "invalidText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The text to show if it is invalid."
+      },
+      "items": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": true,
+        "description": "List of items"
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Generic label that will be used as the textual representation of what this field is for"
+      },
+      "size": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'sm'",
+              "computed": false
+            },
+            {
+              "value": "'lg'",
+              "computed": false
+            },
+            {
+              "value": "'xl'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specify the size of the ListBox. Currently supports either sm, lg or xl as an option."
+      },
+      "titleText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Provide text to be used in a <label> element that is tied to the multiselect via ARIA attributes."
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Prop passed by Dash"
+      }
+    }
+  },
+  "src/lib/components/MultiSelectFilterable.js": {
+    "description": "MultiSelect",
+    "displayName": "MultiSelectFilterable",
     "methods": [],
     "props": {
       "disabled": {

@@ -1,18 +1,18 @@
 % Auto-generated: do not edit by hand
-\name{datePicker}
+\name{datePickerRange}
 
-\alias{datePicker}
+\alias{datePickerRange}
 
-\title{DatePicker component}
+\title{DatePickerRange component}
 
 \description{
-DatePicker
+DatePickerRange
 }
 
 \usage{
-datePicker(id=NULL, dateFormat=NULL, light=NULL, locale=NULL,
+datePickerRange(id=NULL, dateFormat=NULL, light=NULL, locale=NULL,
 maxDate=NULL, minDate=NULL, short=NULL, value=NULL,
-placeholder=NULL, labelText=NULL)
+startLabel=NULL, endLabel=NULL, placeholder=NULL)
 }
 
 \arguments{
@@ -35,9 +35,11 @@ The full list of supported locales can be found here https://github.com/flatpick
 
 \item{value}{Character | list of characters. The value of the date value provided to flatpickr}
 
-\item{placeholder}{Character. Placeholder}
+\item{startLabel}{Character. Start input label}
 
-\item{labelText}{Character. Label text}
+\item{endLabel}{Character. End input label}
+
+\item{placeholder}{Character. placeholder}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

@@ -1,19 +1,23 @@
 /* eslint-disable import/prefer-default-export */
-import Slider from "./components/Slider";
-import UIShell from "./components/UIShell";
-import Column from "./components/Column";
+import Slider from './components/Slider';
+import UIShell from './components/UIShell';
+import Column from './components/Column';
 import Row from './components/Row';
 import Grid from './components/Grid';
 import Card from './components/Card'
-import DatePicker from "./components/DatePicker";
-import MultiSelect from './components/MultiSelect'
+import DatePicker from './components/DatePicker';
+import DatePickerRange from "./components/DatePickerRange";
+import MultiSelect from './components/MultiSelect';
+import MultiSelectFilterable from "./components/MultiSelectFilterable";
 import '../index.scss'
 export {
     Card,
     Column,
     DatePicker,
+    DatePickerRange,
     Grid,
     MultiSelect,
+    MultiSelectFilterable,
     Row,
     Slider,
     UIShell,

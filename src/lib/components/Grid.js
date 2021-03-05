@@ -28,4 +28,7 @@ Grid.propTypes = {
      */
     className: PropTypes.string
 }
+Grid.defaultProps={
+    className: ''
+}
 export default Grid;
