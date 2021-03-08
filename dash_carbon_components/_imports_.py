@@ -7,6 +7,8 @@ from .MultiSelect import MultiSelect
 from .MultiSelectFilterable import MultiSelectFilterable
 from .Row import Row
 from .Slider import Slider
+from .Tab import Tab
+from .Tabs import Tabs
 from .UIShell import UIShell
 
 __all__ = [
@@ -19,5 +21,7 @@ __all__ = [
     "MultiSelectFilterable",
     "Row",
     "Slider",
+    "Tab",
+    "Tabs",
     "UIShell"
 ]

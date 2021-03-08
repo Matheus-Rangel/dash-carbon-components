@@ -400,16 +400,6 @@
         "required": false,
         "description": "Specify the locale of the control.\nUsed for the default compareItems used for sorting the list of items in the control."
       },
-      "initialSelectedItems": {
-        "type": {
-          "name": "arrayOf",
-          "value": {
-            "name": "string"
-          }
-        },
-        "required": false,
-        "description": "Allow users to pass in arbitrary items from their collection that are pre-selected"
-      },
       "light": {
         "type": {
           "name": "bool"
@@ -516,6 +506,20 @@
         },
         "required": false,
         "description": "Provide text to be used in a <label> element that is tied to the multiselect via ARIA attributes."
+      },
+      "selectedItems": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "The list of the selected items",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
       },
       "setProps": {
         "type": {
@@ -545,16 +549,6 @@
         "required": false,
         "description": "Specify the locale of the control.\nUsed for the default compareItems used for sorting the list of items in the control."
       },
-      "initialSelectedItems": {
-        "type": {
-          "name": "arrayOf",
-          "value": {
-            "name": "string"
-          }
-        },
-        "required": false,
-        "description": "Allow users to pass in arbitrary items from their collection that are pre-selected"
-      },
       "light": {
         "type": {
           "name": "bool"
@@ -661,6 +655,20 @@
         },
         "required": false,
         "description": "Provide text to be used in a <label> element that is tied to the multiselect via ARIA attributes."
+      },
+      "selectedItems": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "The list of the selected items",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
       },
       "setProps": {
         "type": {
@@ -713,7 +721,11 @@
           "name": "string"
         },
         "required": false,
-        "description": "The class of the element"
+        "description": "The class of the element",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
       }
     }
   },
@@ -836,6 +848,276 @@
           "value": "5",
           "computed": false
         }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Prop passed by Dash"
+      }
+    }
+  },
+  "src/lib/components/Tab.js": {
+    "description": "",
+    "displayName": "Tab",
+    "methods": [],
+    "props": {
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Specify an optional className to be added to your Tab"
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Whether your Tab is disabled."
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Provide the contents of your Tab"
+      },
+      "role": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Provide an accessibility role for your Tab"
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Value of the tab"
+      },
+      "children": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "PropTypes.arrayOf(PropTypes.node)",
+              "computed": true
+            },
+            {
+              "value": "PropTypes.node",
+              "computed": true
+            }
+          ]
+        },
+        "required": false,
+        "description": "Tab content"
+      }
+    }
+  },
+  "src/lib/components/Tabs.js": {
+    "description": "Tabs",
+    "displayName": "Tabs",
+    "methods": [
+      {
+        "name": "getTabs",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "getTabAt",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "value",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleTabClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleTabKeyDown",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleTabAnchorFocus",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleDropdownClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "selectTabAt",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "ariaLabel": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Specify the text to be read by screen-readers when visiting the <Tabs>\ncomponent",
+        "defaultValue": {
+          "value": "'listbox'",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "PropTypes.arrayOf(PropTypes.node)",
+              "computed": true
+            },
+            {
+              "value": "PropTypes.node",
+              "computed": true
+            }
+          ]
+        },
+        "required": false,
+        "description": "Pass in a collection of <Tab> children to be rendered depending on the\ncurrently selected tab"
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Provide a className that is applied to the root <nav> component for the\n<Tabs>"
+      },
+      "hidden": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Specify whether the Tab content is hidden"
+      },
+      "role": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "By default, this value is \"navigation\". You can also provide an alternate\nrole if it makes sense from the accessibility-side",
+        "defaultValue": {
+          "value": "'navigation'",
+          "computed": false
+        }
+      },
+      "onClick": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Optionally provide an `onClick` handler that is invoked when a <Tab> is\nclicked"
+      },
+      "onKeyDown": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Optionally provide an `onKeyDown` handler that is invoked when keyed\nnavigation is triggered"
+      },
+      "triggerHref": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Provide a string that represents the `href` for the triggered <Tab>",
+        "defaultValue": {
+          "value": "'#'",
+          "computed": false
+        }
+      },
+      "selected": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Optionally provide an index for the currently selected <Tab>"
+      },
+      "iconDescription": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Provide a description that is read out when a user visits the caret icon\nfor the dropdown menu of items",
+        "defaultValue": {
+          "value": "'show menu options'",
+          "computed": false
+        }
+      },
+      "tabContentClassName": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Provide a className that is applied to the <TabContent> components"
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID of this component, used to identify dash components\nin callbacks. The ID needs to be unique across all of the\ncomponents in an app."
+      },
+      "headerOffsets": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "Number of columns of left offset the header will have"
+      },
+      "headerSizes": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "Number of columns the header will have"
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Value of the selected tab"
       },
       "setProps": {
         "type": {

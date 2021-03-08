@@ -9,6 +9,9 @@ import DatePicker from './components/DatePicker';
 import DatePickerRange from "./components/DatePickerRange";
 import MultiSelect from './components/MultiSelect';
 import MultiSelectFilterable from "./components/MultiSelectFilterable";
+import Tabs from './components/Tabs'
+import Tab from './components/Tab'
+
 import '../index.scss'
 export {
     Card,
@@ -20,5 +23,7 @@ export {
     MultiSelectFilterable,
     Row,
     Slider,
+    Tabs,
+    Tab,
     UIShell,
 };

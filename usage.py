@@ -15,10 +15,10 @@ nav_layout = html.Div([
     )
 ])
 
-inputs_layout = dca.Grid(children=[
+inputs_layout = dca.Grid(id='content', children=[
     dca.Row(children=[
         dca.Column(columnSizes=['lg-4 md-5'], offsetSizes=['lg-2'], children=[
-            dca.Card(title='Inputs', children=[
+            dca.Card(title='Slider', children=[
                 html.Div(style={'display': 'flex', 'flexDirection': 'row'}, children=[
                     dca.Slider(
                         id='slider',
@@ -32,7 +32,7 @@ inputs_layout = dca.Grid(children=[
             ])
         ]),
         dca.Column(columnSizes=['lg-4 md-5'], children=[
-            dca.Card(title='Date Picker', style={'display': 'flex', 'justify-content': 'center'}, children=[
+            dca.Card(title='Date Picker', style={'display': 'flex', 'justifyContent': 'center'}, children=[
                 dca.DatePickerRange(
                     id='date-picker',
                     placeholder='mm/dd/yyyy',
@@ -55,7 +55,23 @@ inputs_layout = dca.Grid(children=[
                                           label='Fruits')
             ])
         ]),
-    ])
+    ]),
+    dca.Tabs(id='tabs', headerOffsets=['lg-2'], headerSizes=['lg-10'], children=[
+        dca.Tab(value='tab1', label='Tab 1', children=[
+            dca.Row(style={'marginTop': '24px'}, children=[
+                dca.Column(columnSizes=['lg-3'], offsetSizes=['lg-2'], children=[
+                    dca.Card(title='Tab 1 Content')
+                ])
+            ])
+        ]),
+        dca.Tab(value='tab2', label='Tab 2', children=[
+            dca.Row(style={'marginTop': '24px'}, children=[
+                dca.Column(columnSizes=['lg-5'], offsetSizes=['lg-2'], children=[
+                    dca.Card(title='Tab 2 Content')
+                ])
+            ])
+        ])
+    ]),
 ])
 outputs_layout = dca.Grid(children=[
     dca.Row(children=[

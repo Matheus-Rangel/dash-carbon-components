@@ -21,7 +21,6 @@ export default class DatePickerRange extends Component {
             placeholder,
             setProps
         } = this.props
-        console.log(this.props)
         return (
             <DatePickerCarbon id={id}
                               datePickerType="range"
@@ -32,7 +31,11 @@ export default class DatePickerRange extends Component {
                               minDate={minDate}
                               short={short}
                               value={value}
-                              onChange={({value}) => setProps({value})}
+                              onChange={(change) => {
+                                  if(change.length === 2){
+                                      setProps({value: change.map(date => date.toISOString())})
+                                  }
+                              }}
             >
                 <DatePickerInput
                     id={id + '-start'}

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 /**
  * Carbon Grid
  */
-const Grid = ({children, className, style}) => <div style={style} className={'bx--grid ' + className}>{children}</div>
+const Grid = ({id, children, className, style}) => <div id={id} style={style} className={'bx--grid ' + className}>{children}</div>
 Grid.propTypes = {
     /**
      * The inline styles

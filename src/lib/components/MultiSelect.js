@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {MultiSelect as MultiSelectCarbon} from 'carbon-components-react';
 import PropTypes from 'prop-types';
 
@@ -6,16 +6,25 @@ import PropTypes from 'prop-types';
  * MultiSelect
  */
 const MultiSelect = ({
-                         disabled, locale, initialSelectedItems, light, selectionFeedback, direction, id, invalid,
+                         disabled, locale, selectedItems, light, selectionFeedback, direction, id, invalid,
                          invalidText, items, label, setProps, size, titleText
                      }) => {
-
+    const [currentItems, setCurrentItems] = useState(selectedItems);
     return (
-        <MultiSelectCarbon disabled={disabled} locale={locale} initialSelectedItems={initialSelectedItems} light={light}
-                           selectionFeedback={selectionFeedback} direction={direction} id={id} invalid={invalid}
-                           invalidText={invalidText} items={items} label={label} setProps={setProps} size={size}
-                           titleText={titleText}
-                           itemToString={(item) => item} />
+        <MultiSelectCarbon
+            disabled={disabled} locale={locale} initialSelectedItems={selectedItems} light={light}
+            selectionFeedback={selectionFeedback} direction={direction} id={id} invalid={invalid}
+            invalidText={invalidText} items={items} label={label} size={size}
+            titleText={titleText} itemToString={(item) => item}
+            onChange={
+                ({selectedItems}) => setCurrentItems(selectedItems)
+            }
+            onMenuChange={(menuChange) => {
+                if (!menuChange) {
+                    setProps({selectedItems: currentItems})
+                }
+            }}
+        />
     )
 };
 MultiSelect.propTypes = {
@@ -28,10 +37,6 @@ MultiSelect.propTypes = {
      * Used for the default compareItems used for sorting the list of items in the control.
      */
     locale: PropTypes.string,
-    /**
-     * Allow users to pass in arbitrary items from their collection that are pre-selected
-     */
-    initialSelectedItems: PropTypes.arrayOf(PropTypes.string),
     /**
      * true to use the light version.
      */
@@ -77,7 +82,14 @@ MultiSelect.propTypes = {
      * Provide text to be used in a <label> element that is tied to the multiselect via ARIA attributes.
      */
     titleText: PropTypes.string,
+    /**
+     * The list of the selected items
+     */
+    selectedItems: PropTypes.arrayOf(PropTypes.string),
     /** Prop passed by Dash */
     setProps: PropTypes.func,
+}
+MultiSelect.defaultProps = {
+    selectedItems: []
 }
 export default MultiSelect

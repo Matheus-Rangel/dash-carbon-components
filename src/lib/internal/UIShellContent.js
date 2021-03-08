@@ -1,8 +1,8 @@
 import React from 'react'
-import {Content, Loading} from "carbon-components-react";
+import {Content} from "carbon-components-react";
 import PropTypes from 'prop-types'
 
-const UIShellContent = ({children, loading_state}) => {
+const UIShellContent = ({children, }) => {
     const style = {
         minHeight: 'calc(100vh - 48px)',
         margin: '0',
@@ -12,7 +12,7 @@ const UIShellContent = ({children, loading_state}) => {
     };
     return (
         <Content id='main-content' style={style}>
-            {loading_state.is_loading ? <Loading/> : children}
+            {children}
         </Content>
     );
 }
@@ -22,6 +22,7 @@ UIShellContent.propTypes = {
         PropTypes.node,
     ]),
     /**
+     *
      * Object that holds the loading state object coming from dash-renderer
      */
     loading_state: PropTypes.shape({

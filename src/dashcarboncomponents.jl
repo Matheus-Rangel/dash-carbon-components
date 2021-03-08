@@ -14,6 +14,8 @@ include("multiselect.jl")
 include("multiselectfilterable.jl")
 include("row.jl")
 include("slider.jl")
+include("tab.jl")
+include("tabs.jl")
 include("uishell.jl")
 
 function __init__()

@@ -27,5 +27,8 @@ Row.propTypes = {
      * The class of the element
      */
     className: PropTypes.string
+};
+Row.defaultProps = {
+    className: ''
 }
 export default Row;
