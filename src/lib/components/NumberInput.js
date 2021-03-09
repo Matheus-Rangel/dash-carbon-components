@@ -52,7 +52,12 @@ const NumberInput = ({
         value={value}
         warn={warn}
         warnText={warnText}
-        onChange={() => {
+        onBlur={() => {
+            const inputValue = input.current.value
+            const value = parseInt(inputValue, 10)
+            setProps({value})
+        }}
+        onClick={() => {
             const inputValue = input.current.value
             const value = parseInt(inputValue, 10)
             setProps({value})
