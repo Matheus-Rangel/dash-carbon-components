@@ -10,8 +10,8 @@ UIShell is a default layout with the header and a sidebar
 }
 
 \usage{
-uIShell(children=NULL, id=NULL, name=NULL, pages=NULL,
-loading_state=NULL)
+uIShell(children=NULL, id=NULL, name=NULL, sidebarItems=NULL,
+headerItems=NULL, loading_state=NULL)
 }
 
 \arguments{
@@ -21,10 +21,15 @@ loading_state=NULL)
 
 \item{name}{Character. Platform Name}
 
-\item{pages}{List of lists containing elements 'name', 'url'.
+\item{sidebarItems}{List of lists containing elements 'name', 'url'.
 those elements have the following types:
   - name (character; optional)
-  - url (character; optional)s. If the application has multiple pages}
+  - url (character; optional)s. Items of the sidebar}
+
+\item{headerItems}{List of lists containing elements 'name', 'url'.
+those elements have the following types:
+  - name (character; optional)
+  - url (character; optional)s. Items of the header}
 
 \item{loading_state}{Lists containing elements 'is_loading', 'prop_name', 'component_name'.
 those elements have the following types:

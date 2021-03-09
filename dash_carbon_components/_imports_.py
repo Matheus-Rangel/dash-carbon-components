@@ -5,6 +5,7 @@ from .DatePickerRange import DatePickerRange
 from .Grid import Grid
 from .MultiSelect import MultiSelect
 from .MultiSelectFilterable import MultiSelectFilterable
+from .NumberInput import NumberInput
 from .Row import Row
 from .Slider import Slider
 from .Tab import Tab
@@ -19,6 +20,7 @@ __all__ = [
     "Grid",
     "MultiSelect",
     "MultiSelectFilterable",
+    "NumberInput",
     "Row",
     "Slider",
     "Tab",

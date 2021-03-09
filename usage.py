@@ -11,7 +11,8 @@ nav_layout = html.Div([
     dca.UIShell(
         id='page-content',
         name='Dashboard',
-        pages=[{'name': 'Inputs', 'url': '/'}, {'name': 'Outputs', 'url': '/outputs'}],
+        sidebarItems=[{'name': 'Inputs', 'url': '/'}, {'name': 'Outputs', 'url': '/outputs'}],
+        headerItems=[{'name': 'Inputs', 'url': '/'}, {'name': 'Outputs', 'url': '/outputs'}],
     )
 ])
 
@@ -55,6 +56,11 @@ inputs_layout = dca.Grid(id='content', children=[
                                           label='Fruits')
             ])
         ]),
+        dca.Column(columnSizes=['lg-3 md-5'], children=[
+            dca.Card(title='Number Input', children=[
+                dca.NumberInput(id='numberinput',label='Number Input', value=50, min=0, max=100000000, step=10)
+            ])
+        ]),
     ]),
     dca.Tabs(id='tabs', headerOffsets=['lg-2'], headerSizes=['lg-10'], children=[
         dca.Tab(value='tab1', label='Tab 1', children=[
@@ -82,7 +88,7 @@ outputs_layout = dca.Grid(children=[
                 max=1000,
                 min=0,
                 step=1,
-                value=100)
+                value=100),
         ])
     ])
 ])

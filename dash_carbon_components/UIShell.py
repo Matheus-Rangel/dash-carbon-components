@@ -11,7 +11,11 @@ Keyword arguments:
 - children (list of a list of or a singular dash component, string or numbers; optional): Content of the dashboard
 - id (string; optional): Element id
 - name (string; required): Platform Name
-- pages (dict; optional): If the application has multiple pages. pages has the following type: list of dicts containing keys 'name', 'url'.
+- sidebarItems (dict; optional): Items of the sidebar. sidebarItems has the following type: list of dicts containing keys 'name', 'url'.
+Those keys have the following types:
+  - name (string; optional)
+  - url (string; optional)
+- headerItems (dict; optional): Items of the header. headerItems has the following type: list of dicts containing keys 'name', 'url'.
 Those keys have the following types:
   - name (string; optional)
   - url (string; optional)
@@ -21,12 +25,12 @@ Those keys have the following types:
   - prop_name (string; optional): Holds which property is loading
   - component_name (string; optional): Holds the name of the component that is loading"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, name=Component.REQUIRED, pages=Component.UNDEFINED, loading_state=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'name', 'pages', 'loading_state']
+    def __init__(self, children=None, id=Component.UNDEFINED, name=Component.REQUIRED, sidebarItems=Component.UNDEFINED, headerItems=Component.UNDEFINED, loading_state=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'name', 'sidebarItems', 'headerItems', 'loading_state']
         self._type = 'UIShell'
         self._namespace = 'dash_carbon_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'name', 'pages', 'loading_state']
+        self.available_properties = ['children', 'id', 'name', 'sidebarItems', 'headerItems', 'loading_state']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

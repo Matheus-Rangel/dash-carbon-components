@@ -4,7 +4,9 @@ import {
     Header,
     HeaderContainer,
     HeaderMenuButton,
+    HeaderMenuItem,
     HeaderName,
+    HeaderNavigation,
     SideNav,
     SideNavItems,
     SideNavLink,
@@ -22,15 +24,22 @@ class UIShell extends Component {
         this.state = {windowLocation: window.location.pathname}
     }
 
-    getMenuItems(pages) {
-        return pages.map((page, index) => {
+    getSideMenuItems(items) {
+        return items.map((item, index) => {
             return (
-                <SideNavLink key={index} href={page.url} onClick={(e) => updateLocation(e, page.url)}
-                             isActive={this.state.windowLocation === page.url}>{page.name}</SideNavLink>
+                <SideNavLink key={index} href={item.url} onClick={(e) => updateLocation(e, item.url)}
+                             isActive={this.state.windowLocation === item.url}>{item.name}</SideNavLink>
             )
         });
     }
-
+    getHeaderMenuItems(items) {
+        return items.map((item, index) => {
+            return (
+                <HeaderMenuItem key={index} href={item.url} onClick={(e) => updateLocation(e, item.url)}
+                             isCurrentPage={this.state.windowLocation === item.url}>{item.name}</HeaderMenuItem>
+            )
+        });
+    }
     componentDidMount() {
         window.addEventListener(
             '_dashprivate_pushstate',
@@ -38,13 +47,13 @@ class UIShell extends Component {
     }
 
     render() {
-        const {pages, name, loading_state, children} = this.props;
+        const {sidebarItems, headerItems, name, loading_state, children} = this.props;
         return (
             <HeaderContainer render={({isSideNavExpanded, onClickSideNavExpand}) => (
                 <>
                     <Header aria-label={"IBM " + name}>
                         <SkipToContent/>
-                        {pages.length > 0 &&
+                        {sidebarItems.length > 0 &&
                         <HeaderMenuButton
                             aria-label="Open menu"
                             onClick={onClickSideNavExpand}
@@ -54,19 +63,24 @@ class UIShell extends Component {
                         <HeaderName href={'/'}>
                             {name}
                         </HeaderName>
-                        {pages.length > 0 &&
+                        {sidebarItems.length > 0 &&
                         <SideNav
                             aria-label="Side navigation"
                             expanded={isSideNavExpanded}>
                             <SideNavItems>
-                                {this.getMenuItems(pages)}
+                                {this.getSideMenuItems(sidebarItems)}
                             </SideNavItems>
                         </SideNav>
                         }
+                        {headerItems.length > 0 &&
+                        <HeaderNavigation aria-label={name}>
+                            {this.getHeaderMenuItems(headerItems)}
+                        </HeaderNavigation>
+                        }
                     </Header>
-                     <UIShellContent loading_state={loading_state}>
+                    <UIShellContent loading_state={loading_state}>
                         {children}
-                     </UIShellContent>
+                    </UIShellContent>
                 </>
             )}>
             </HeaderContainer>
@@ -83,8 +97,17 @@ UIShell.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
     ]),
-    /** If the application has multiple pages */
-    pages: PropTypes.arrayOf(
+    /** Items of the sidebar*/
+    sidebarItems: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string,
+            url: PropTypes.string,
+        })
+    ),
+    /**
+     * Items of the header
+     */
+    headerItems: PropTypes.arrayOf(
         PropTypes.shape({
             name: PropTypes.string,
             url: PropTypes.string,
@@ -112,7 +135,8 @@ UIShell.propTypes = {
 }
 
 UIShell.defaultProps = {
-    pages: []
+    sidebarItems: [],
+    headerItems: []
 }
 
 export default UIShell;

@@ -679,6 +679,248 @@
       }
     }
   },
+  "src/lib/components/NumberInput.js": {
+    "description": "",
+    "displayName": "NumberInput",
+    "methods": [],
+    "props": {
+      "allowEmpty": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "`true` to allow empty string.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "style of the input"
+      },
+      "ariaLabel": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Provide a description that would be used to best describe the use case of the NumberInput component",
+        "defaultValue": {
+          "value": "'Numeric input field with increment and decrement buttons'",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Specify an optional className to be applied to the wrapper node"
+      },
+      "defaultValue": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Optional starting value for uncontrolled state"
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Specify if the control should be disabled, or not",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "helperText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Provide text that is used alongside the control label for additional help",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "hideLabel": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Specify whether you want the underlying label to be visually hidden",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "iconDescription": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Provide a description for up/down icons that can be read by screen readers",
+        "defaultValue": {
+          "value": "'choose a number'",
+          "computed": false
+        }
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Specify a custom `id` for the input"
+      },
+      "invalid": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Specify if the currently value is invalid.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "invalidText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Message which is displayed if the value is invalid.",
+        "defaultValue": {
+          "value": "'Provide invalidText'",
+          "computed": false
+        }
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Generic `label` that will be used as the textual representation of what\nthis field is for"
+      },
+      "light": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "`true` to use the light version.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "max": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The maximum value."
+      },
+      "min": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The minimum value."
+      },
+      "readOnly": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Specify if the component should be read-only"
+      },
+      "size": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'sm'",
+              "computed": false
+            },
+            {
+              "value": "'xl'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specify the size of the Number Input. Currently supports either `sm` or `xl` as an option."
+      },
+      "step": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Specify how much the valus should increase/decrease upon clicking on up/down button",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      },
+      "value": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "number"
+            },
+            {
+              "name": "string"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Specify the value of the input"
+      },
+      "warn": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Specify whether the control is currently in warning state",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "warnText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Provide the text that is displayed when the control is in warning state",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Prop passed by dash"
+      }
+    }
+  },
   "src/lib/components/Row.js": {
     "description": "Grid Row",
     "displayName": "Row",
@@ -1133,12 +1375,24 @@
     "displayName": "UIShell",
     "methods": [
       {
-        "name": "getMenuItems",
+        "name": "getSideMenuItems",
         "docblock": null,
         "modifiers": [],
         "params": [
           {
-            "name": "pages",
+            "name": "items",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "getHeaderMenuItems",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "items",
             "type": null
           }
         ],
@@ -1175,7 +1429,7 @@
         "required": false,
         "description": "Content of the dashboard"
       },
-      "pages": {
+      "sidebarItems": {
         "type": {
           "name": "arrayOf",
           "value": {
@@ -1193,7 +1447,31 @@
           }
         },
         "required": false,
-        "description": "If the application has multiple pages",
+        "description": "Items of the sidebar",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "headerItems": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "name": {
+                "name": "string",
+                "required": false
+              },
+              "url": {
+                "name": "string",
+                "required": false
+              }
+            }
+          }
+        },
+        "required": false,
+        "description": "Items of the header",
         "defaultValue": {
           "value": "[]",
           "computed": false
