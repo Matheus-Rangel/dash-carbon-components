@@ -7,6 +7,7 @@ const RadioButtonGroup = (
     const buttons = radiosButtons.map(({labelText, value, id}) => (
         <RadioButton key={value} labelText={labelText} id={id} value={value}/>
     ));
+    console.log(legendText)
     return (
         <CarbonRadioButtonGroup id={id} labelPosition={labelPosition} orientation={orientation}
                                 disabled={disabled} legendText={legendText} name={name}
