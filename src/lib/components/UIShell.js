@@ -47,10 +47,9 @@ class UIShell extends Component {
     }
 
     render() {
-        const {sidebarItems, headerItems, name, loading_state, children} = this.props;
+        const {sidebarItems, headerItems, name} = this.props;
         return (
             <HeaderContainer render={({isSideNavExpanded, onClickSideNavExpand}) => (
-                <>
                     <Header aria-label={"IBM " + name}>
                         <SkipToContent/>
                         {sidebarItems.length > 0 &&
@@ -78,10 +77,6 @@ class UIShell extends Component {
                         </HeaderNavigation>
                         }
                     </Header>
-                    <UIShellContent loading_state={loading_state}>
-                        {children}
-                    </UIShellContent>
-                </>
             )}>
             </HeaderContainer>
         );
@@ -93,11 +88,6 @@ UIShell.propTypes = {
     id: PropTypes.string,
     /** Platform Name */
     name: PropTypes.string.isRequired,
-    /** Content of the dashboard */
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node
-    ]),
     /** Items of the sidebar*/
     sidebarItems: PropTypes.arrayOf(
         PropTypes.shape({

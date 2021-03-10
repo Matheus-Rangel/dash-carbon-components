@@ -10,13 +10,11 @@ UIShell is a default layout with the header and a sidebar
 }
 
 \usage{
-uIShell(children=NULL, id=NULL, name=NULL, sidebarItems=NULL,
-headerItems=NULL, loading_state=NULL)
+uIShell(id=NULL, name=NULL, sidebarItems=NULL, headerItems=NULL,
+loading_state=NULL)
 }
 
 \arguments{
-\item{children}{List of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number. Content of the dashboard}
-
 \item{id}{Character. Element id}
 
 \item{name}{Character. Platform Name}

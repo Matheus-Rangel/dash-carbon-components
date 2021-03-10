@@ -1,18 +1,28 @@
 import dash
 import dash_carbon_components as dca
-from dash_core_components import Location
 import dash_html_components as html
 from dash.dependencies import Output, Input
+from dash_core_components import Location
 
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
 
 nav_layout = html.Div([
     Location(id='url', refresh=False),
     dca.UIShell(
-        id='page-content',
         name='Dashboard',
         sidebarItems=[{'name': 'Inputs', 'url': '/'}, {'name': 'Outputs', 'url': '/outputs'}],
         headerItems=[{'name': 'Inputs', 'url': '/'}, {'name': 'Outputs', 'url': '/outputs'}],
+    ),
+    html.Div(
+        id='page-content',
+        style={
+            'minHeight': 'calc(100vh - 48px)',
+            'margin': '0',
+            'width': '100%',
+            'backgroundColor': '#f4f4f4',
+            'marginTop': '48px',
+            'padding': '32px'
+        }
     )
 ])
 
@@ -58,7 +68,22 @@ inputs_layout = dca.Grid(id='content', children=[
         ]),
         dca.Column(columnSizes=['lg-3 md-5'], children=[
             dca.Card(title='Number Input', children=[
-                dca.NumberInput(id='numberinput', helperText='max', label='Number Input', value=50, min=0, max=100000000, step=10, )
+                html.Div([
+                    dca.NumberInput(id='numberinput', helperText='max', label='Number Input', value=50, min=0,
+                                    max=100000000, step=10)
+                ]),
+            ])
+        ]),
+        dca.Column(columnSizes=['lg-4 md-5'], offsetSizes=['lg-2'], children=[
+            dca.Card(title='Radio Group', children=[
+                html.Div([
+                    dca.RadioButtonGroup(legendText='Radio', value='opt2', id='Radio', name='Radio',
+                                         radiosButtons=[
+                                             {'labelText': 'Option 1', 'value': 'opt1'},
+                                             {'labelText': 'Option 2', 'value': 'opt2'},
+                                             {'labelText': 'Option 3', 'value': 'opt3'},
+                                         ])
+                ]),
             ])
         ]),
     ]),
@@ -104,7 +129,7 @@ app.validation_layout = html.Div([
 
 pages = {
     '/': inputs_layout,
-    # '/outputs': outputs_layout
+    '/outputs': outputs_layout
 }
 
 

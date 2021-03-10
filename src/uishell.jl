@@ -4,14 +4,10 @@ export uishell
 
 """
     uishell(;kwargs...)
-    uishell(children::Any;kwargs...)
-    uishell(children_maker::Function;kwargs...)
-
 
 An UIShell component.
 UIShell is a default layout with the header and a sidebar
 Keyword arguments:
-- `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional): Content of the dashboard
 - `id` (String; optional): Element id
 - `name` (String; required): Platform Name
 - `sidebarItems` (optional): Items of the sidebar. sidebarItems has the following type: Array of lists containing elements 'name', 'url'.
@@ -29,11 +25,8 @@ Those elements have the following types:
   - `component_name` (String; optional): Holds the name of the component that is loading
 """
 function uishell(; kwargs...)
-        available_props = Symbol[:children, :id, :name, :sidebarItems, :headerItems, :loading_state]
+        available_props = Symbol[:id, :name, :sidebarItems, :headerItems, :loading_state]
         wild_props = Symbol[]
         return Component("uishell", "UIShell", "dash_carbon_components", available_props, wild_props; kwargs...)
 end
-
-uishell(children::Any; kwargs...) = uishell(;kwargs..., children = children)
-uishell(children_maker::Function; kwargs...) = uishell(children_maker(); kwargs...)
 

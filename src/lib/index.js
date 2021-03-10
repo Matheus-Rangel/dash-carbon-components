@@ -10,6 +10,7 @@ import DatePickerRange from './components/DatePickerRange';
 import MultiSelect from './components/MultiSelect';
 import MultiSelectFilterable from './components/MultiSelectFilterable';
 import NumberInput from  './components/NumberInput';
+import RadioButtonGroup from "./components/RadioButtonGroup";
 import Tabs from './components/Tabs';
 import Tab from './components/Tab';
 
@@ -23,6 +24,7 @@ export {
     MultiSelect,
     MultiSelectFilterable,
     NumberInput,
+    RadioButtonGroup,
     Row,
     Slider,
     Tabs,
