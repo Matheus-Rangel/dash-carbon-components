@@ -1,4 +1,5 @@
 from .Card import Card
+from .Checkbox import Checkbox
 from .Column import Column
 from .DatePicker import DatePicker
 from .DatePickerRange import DatePickerRange
@@ -15,6 +16,7 @@ from .UIShell import UIShell
 
 __all__ = [
     "Card",
+    "Checkbox",
     "Column",
     "DatePicker",
     "DatePickerRange",

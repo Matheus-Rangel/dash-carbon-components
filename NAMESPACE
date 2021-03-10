@@ -1,6 +1,7 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 export(Card)
+export(Checkbox)
 export(Column)
 export(DatePicker)
 export(DatePickerRange)
@@ -17,6 +18,7 @@ export(UIShell)
 export(multiSelect)
 export(radioButtonGroup)
 export(card)
+export(checkbox)
 export(grid)
 export(multiSelectFilterable)
 export(uIShell)

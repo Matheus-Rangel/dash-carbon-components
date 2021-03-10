@@ -59,6 +59,7 @@ module.exports = (env, argv) => {
         },
         module: {
             rules: [
+
                 {
                     test: /\.jsx?$/,
                     exclude: /node_modules/,

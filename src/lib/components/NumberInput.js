@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef} from 'react';
 import {NumberInput as NumberInputCarbon} from "carbon-components-react";
 import PropTypes from 'prop-types';
 
@@ -60,7 +60,6 @@ const NumberInput = ({
         warn={warn}
         warnText={warnText}
         onBlur={setValue}
-        onClick={setValue}
     />
 }
 NumberInput.propTypes = {

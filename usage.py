@@ -86,6 +86,13 @@ inputs_layout = dca.Grid(id='content', children=[
                 ]),
             ])
         ]),
+        dca.Column(columnSizes=['lg-2 md-5'], children=[
+            dca.Card(title='Checkbox', children=[
+                html.Div([
+                    dca.Checkbox(value=False, id='Checkbox', label='Check me', title='CHECK ME')
+                ]),
+            ])
+        ]),
     ]),
     dca.Tabs(id='tabs', headerOffsets=['lg-2'], headerSizes=['lg-10'], children=[
         dca.Tab(value='tab1', label='Tab 1', children=[
