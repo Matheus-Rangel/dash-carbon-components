@@ -96,6 +96,7 @@ UIShell.propTypes = {
     /** Content of the dashboard */
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
     ]),
     /** Items of the sidebar*/
     sidebarItems: PropTypes.arrayOf(

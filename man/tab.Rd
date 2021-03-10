@@ -15,7 +15,7 @@ role=NULL, value=NULL)
 }
 
 \arguments{
-\item{children}{A value equal to: proptypes.arrayof(proptypes.node), proptypes.node. Tab content}
+\item{children}{List of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number. Tab content}
 
 \item{className}{Character. Specify an optional className to be added to your Tab}
 

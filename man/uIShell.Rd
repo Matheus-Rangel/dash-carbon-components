@@ -15,7 +15,7 @@ headerItems=NULL, loading_state=NULL)
 }
 
 \arguments{
-\item{children}{List of a list of or a singular dash component, string or numbers. Content of the dashboard}
+\item{children}{List of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number. Content of the dashboard}
 
 \item{id}{Character. Element id}
 

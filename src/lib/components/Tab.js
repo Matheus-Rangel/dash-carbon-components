@@ -43,7 +43,10 @@ Tab.propTypes = {
     /**
      * Tab content
      */
-    children: PropTypes.oneOf([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ]),
 };
 TabItem.defaultProps = {
     role: 'presentation',

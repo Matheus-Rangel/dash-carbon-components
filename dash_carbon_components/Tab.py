@@ -8,7 +8,7 @@ class Tab(Component):
 
 
 Keyword arguments:
-- children (a value equal to: PropTypes.arrayOf(PropTypes.node), PropTypes.node; optional): Tab content
+- children (list of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional): Tab content
 - className (string; optional): Specify an optional className to be added to your Tab
 - disabled (boolean; optional): Whether your Tab is disabled.
 - label (string; required): Provide the contents of your Tab

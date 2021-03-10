@@ -10,18 +10,25 @@ const MultiSelectFilterable = ({
                                    invalidText, items, label, setProps, size, titleText
                                }) => {
     const [currentItems, setCurrentItems] = useState(selectedItems);
+    const [menuOpen, setMenuOpen] = useState(false);
     return (
         <MultiSelectCarbon.Filterable
             disabled={disabled} locale={locale} initialSelectedItems={selectedItems}
             light={light} selectionFeedback={selectionFeedback} direction={direction} id={id}
             invalid={invalid} invalidText={invalidText} items={items} placeholder={label} size={size}
             titleText={titleText} itemToString={(item) => item}
-            onChange={
-                ({selectedItems}) => setCurrentItems(selectedItems)
-            }
+            onChange={({selectedItems}) => {
+                if (!menuOpen) {
+                    setProps({selectedItems})
+                } else {
+                    setCurrentItems(selectedItems)
+                }
+            }}
             onMenuChange={(menuChange) => {
-                if(!menuChange) {
+                if (!menuChange) {
                     setProps({selectedItems: currentItems})
+                } else {
+                    setMenuOpen(menuChange)
                 }
             }}
         />

@@ -11,7 +11,7 @@ export tabs
 A Tabs component.
 Tabs
 Keyword arguments:
-- `children` (a value equal to: PropTypes.arrayOf(PropTypes.node), PropTypes.node; optional): Pass in a collection of <Tab> children to be rendered depending on the
+- `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional): Pass in a collection of <Tab> children to be rendered depending on the
 currently selected tab
 - `ariaLabel` (String; optional): Specify the text to be read by screen-readers when visiting the <Tabs>
 component

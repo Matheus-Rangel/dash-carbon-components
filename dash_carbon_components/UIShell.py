@@ -8,7 +8,7 @@ class UIShell(Component):
 UIShell is a default layout with the header and a sidebar
 
 Keyword arguments:
-- children (list of a list of or a singular dash component, string or numbers; optional): Content of the dashboard
+- children (list of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional): Content of the dashboard
 - id (string; optional): Element id
 - name (string; required): Platform Name
 - sidebarItems (dict; optional): Items of the sidebar. sidebarItems has the following type: list of dicts containing keys 'name', 'url'.

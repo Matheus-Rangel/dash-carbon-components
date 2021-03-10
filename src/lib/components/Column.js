@@ -32,7 +32,7 @@ Column.propTypes = {
      */
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node,
+        PropTypes.node
     ]),
     /**
      * The class of the element

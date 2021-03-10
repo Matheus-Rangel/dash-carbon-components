@@ -38,7 +38,7 @@ Card.propTypes = {
      */
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node,
+        PropTypes.node
     ]),
     /**
      * The class of the element
@@ -46,10 +46,10 @@ Card.propTypes = {
     className: PropTypes.string,
     /**
      * Title of the card
-    */
+     */
     title: PropTypes.string
 }
-Card.defaultProps={
+Card.defaultProps = {
     className: ''
 }
 export default Card;

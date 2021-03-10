@@ -29,7 +29,7 @@ class Tabs extends React.Component {
     }
 
     getTabs() {
-        return React.Children.map(this.props.children, tab => tab);
+        return React.Children.map(this.props.children, tab => tab) || [];
     }
 
     getTabAt(value) {
@@ -104,6 +104,7 @@ class Tabs extends React.Component {
             headerOffsets,
             headerSizes,
             value,
+            setProps,
             ...other
         } = this.props;
 
@@ -131,7 +132,11 @@ class Tabs extends React.Component {
                 handleTabAnchorFocus={this.handleTabAnchorFocus()}
                 tabIndex={tabIndex}
                 handleTabKeyDown={this.handleTabKeyDown()}
-                {...tabProps}
+                className={tabProps.className}
+                disabled={tabProps.disabled}
+                label={tabProps.label}
+                role={tabProps.role}
+                value={tabProps.value}
             />
         });
         const selectedTab = this.getTabAt(value) || this.getTabs()[0];
@@ -161,13 +166,13 @@ class Tabs extends React.Component {
                                     onClick={this.handleDropdownClick}>
                                     {selectedLabel}
                                 </a>
-                                <ChevronDownGlyph aria-hidden>
+                                <ChevronDownGlyph>
                                     {iconDescription && <title>{iconDescription}</title>}
                                 </ChevronDownGlyph>
                             </div>
-                            <ul role="tablist" className={classes.tablist}>
+                             <ul role="tablist" className={classes.tablist}>
                                 {tabsWithProps}
-                            </ul>
+                             </ul>
                         </div>
                     </Column>
                 </Row>
@@ -187,7 +192,10 @@ Tabs.propTypes = {
      * Pass in a collection of <Tab> children to be rendered depending on the
      * currently selected tab
      */
-    children: PropTypes.oneOf([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ]),
     /**
      * Provide a className that is applied to the root <nav> component for the
      * <Tabs>

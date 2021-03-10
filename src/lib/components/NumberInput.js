@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {NumberInput as NumberInputCarbon} from "carbon-components-react";
 import PropTypes from 'prop-types';
 
@@ -28,6 +28,13 @@ const NumberInput = ({
                          warnText,
                      }) => {
     const input = useRef(null);
+    const setValue = () => {
+        if (input.current.value) {
+            const inputValue = input.current.value
+            const value = parseInt(inputValue, 10)
+            setProps({value})
+        }
+    }
     return <NumberInputCarbon
         ref={input}
         allowEmpty={allowEmpty}
@@ -52,16 +59,8 @@ const NumberInput = ({
         value={value}
         warn={warn}
         warnText={warnText}
-        onBlur={() => {
-            const inputValue = input.current.value
-            const value = parseInt(inputValue, 10)
-            setProps({value})
-        }}
-        onClick={() => {
-            const inputValue = input.current.value
-            const value = parseInt(inputValue, 10)
-            setProps({value})
-        }}
+        onBlur={setValue}
+        onClick={setValue}
     />
 }
 NumberInput.propTypes = {

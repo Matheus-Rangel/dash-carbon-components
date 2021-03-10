@@ -11,7 +11,7 @@ export tab
 A Tab component.
 
 Keyword arguments:
-- `children` (a value equal to: PropTypes.arrayOf(PropTypes.node), PropTypes.node; optional): Tab content
+- `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional): Tab content
 - `className` (String; optional): Specify an optional className to be added to your Tab
 - `disabled` (Bool; optional): Whether your Tab is disabled.
 - `label` (String; required): Provide the contents of your Tab

@@ -1142,15 +1142,16 @@
       },
       "children": {
         "type": {
-          "name": "enum",
+          "name": "union",
           "value": [
             {
-              "value": "PropTypes.arrayOf(PropTypes.node)",
-              "computed": true
+              "name": "arrayOf",
+              "value": {
+                "name": "node"
+              }
             },
             {
-              "value": "PropTypes.node",
-              "computed": true
+              "name": "node"
             }
           ]
         },
@@ -1237,15 +1238,16 @@
       },
       "children": {
         "type": {
-          "name": "enum",
+          "name": "union",
           "value": [
             {
-              "value": "PropTypes.arrayOf(PropTypes.node)",
-              "computed": true
+              "name": "arrayOf",
+              "value": {
+                "name": "node"
+              }
             },
             {
-              "value": "PropTypes.node",
-              "computed": true
+              "name": "node"
             }
           ]
         },
@@ -1423,6 +1425,9 @@
               "value": {
                 "name": "node"
               }
+            },
+            {
+              "name": "node"
             }
           ]
         },

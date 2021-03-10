@@ -18,7 +18,7 @@ headerSizes=NULL, value=NULL)
 }
 
 \arguments{
-\item{children}{A value equal to: proptypes.arrayof(proptypes.node), proptypes.node. Pass in a collection of <Tab> children to be rendered depending on the
+\item{children}{List of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number. Pass in a collection of <Tab> children to be rendered depending on the
 currently selected tab}
 
 \item{ariaLabel}{Character. Specify the text to be read by screen-readers when visiting the <Tabs>

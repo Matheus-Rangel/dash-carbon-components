@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 /**
  * Grid Row
  */
-const Row = ({children, style, className, id}) => <div id={id} style={style} className={'bx--row ' + className}>{children}</div>
+const Row = ({children, style, className, id}) => <div id={id} style={style}
+                                                       className={'bx--row ' + className}>{children}</div>
 Row.propTypes = {
     /**
      * The inline styles
@@ -21,7 +22,7 @@ Row.propTypes = {
      */
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node,
+        PropTypes.node
     ]),
     /**
      * The class of the element

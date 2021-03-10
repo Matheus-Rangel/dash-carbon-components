@@ -1,13 +1,13 @@
 import dash
 import dash_carbon_components as dca
-import dash_core_components as dcc
+from dash_core_components import Location
 import dash_html_components as html
 from dash.dependencies import Output, Input
 
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
 
 nav_layout = html.Div([
-    dcc.Location(id='url', refresh=False),
+    Location(id='url', refresh=False),
     dca.UIShell(
         id='page-content',
         name='Dashboard',
@@ -58,7 +58,7 @@ inputs_layout = dca.Grid(id='content', children=[
         ]),
         dca.Column(columnSizes=['lg-3 md-5'], children=[
             dca.Card(title='Number Input', children=[
-                dca.NumberInput(id='numberinput',label='Number Input', value=50, min=0, max=100000000, step=10)
+                dca.NumberInput(id='numberinput', helperText='max', label='Number Input', value=50, min=0, max=100000000, step=10, )
             ])
         ]),
     ]),
@@ -104,7 +104,7 @@ app.validation_layout = html.Div([
 
 pages = {
     '/': inputs_layout,
-    '/outputs': outputs_layout
+    # '/outputs': outputs_layout
 }
 
 
