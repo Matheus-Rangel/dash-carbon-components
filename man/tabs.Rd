@@ -10,9 +10,9 @@ Tabs
 }
 
 \usage{
-tabs(children=NULL, ariaLabel=NULL, className=NULL, hidden=NULL,
-role=NULL, onClick=NULL, onKeyDown=NULL, triggerHref=NULL,
-selected=NULL, iconDescription=NULL,
+tabs(children=NULL, ariaLabel=NULL, style=NULL, className=NULL,
+hidden=NULL, role=NULL, onClick=NULL, onKeyDown=NULL,
+triggerHref=NULL, selected=NULL, iconDescription=NULL,
 tabContentClassName=NULL, id=NULL, headerOffsets=NULL,
 headerSizes=NULL, value=NULL)
 }
@@ -23,6 +23,8 @@ currently selected tab}
 
 \item{ariaLabel}{Character. Specify the text to be read by screen-readers when visiting the <Tabs>
 component}
+
+\item{style}{Named list. }
 
 \item{className}{Character. Provide a className that is applied to the root <nav> component for the
 <Tabs>}

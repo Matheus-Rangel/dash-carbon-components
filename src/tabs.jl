@@ -15,6 +15,7 @@ Keyword arguments:
 currently selected tab
 - `ariaLabel` (String; optional): Specify the text to be read by screen-readers when visiting the <Tabs>
 component
+- `style` (Dict; optional)
 - `className` (String; optional): Provide a className that is applied to the root <nav> component for the
 <Tabs>
 - `hidden` (Bool; optional): Specify whether the Tab content is hidden
@@ -33,7 +34,7 @@ components in an app.
 - `value` (String; optional): Value of the selected tab
 """
 function tabs(; kwargs...)
-        available_props = Symbol[:children, :ariaLabel, :className, :hidden, :role, :triggerHref, :selected, :iconDescription, :tabContentClassName, :id, :headerOffsets, :headerSizes, :value]
+        available_props = Symbol[:children, :ariaLabel, :style, :className, :hidden, :role, :triggerHref, :selected, :iconDescription, :tabContentClassName, :id, :headerOffsets, :headerSizes, :value]
         wild_props = Symbol[]
         return Component("tabs", "Tabs", "dash_carbon_components", available_props, wild_props; kwargs...)
 end

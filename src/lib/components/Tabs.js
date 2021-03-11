@@ -12,8 +12,6 @@ import ChevronDownGlyph from '@carbon/icons-react/lib/chevron--down/index';
 import {settings} from 'carbon-components';
 import {getProps} from "../internal/childrenOperations";
 import TabItem from "../internal/TabItem";
-import Row from "./Row";
-import Column from "./Column";
 
 const {prefix} = settings;
 
@@ -124,7 +122,7 @@ class Tabs extends React.Component {
             const tabPanelIndex = index === this.state.selected ? 0 : -1;
             const tabIndex = !this.state.dropdownHidden ? 0 : tabPanelIndex;
             const tabProps = getProps(tab)
-            return  <TabItem
+            return <TabItem
                 index={index}
                 key={index}
                 selected={value ? tabProps.value === value : index === 0}
@@ -149,38 +147,35 @@ class Tabs extends React.Component {
         const selectedLabel = selectedTab ? selectedTab.props.label : '';
         return (
             <>
-                <Row>
-                    <Column columnSizes={headerSizes} offsetSizes={headerOffsets}>
-                        <div {...other} className={classes.tabs} role={role}>
-                            <div
-                                role="listbox"
-                                aria-label={ariaLabel}
-                                tabIndex={0}
-                                className={`${prefix}--tabs-trigger`}
-                                onClick={this.handleDropdownClick}
-                                onKeyPress={this.handleDropdownClick}>
-                                <a
-                                    tabIndex={-1}
-                                    className={`${prefix}--tabs-trigger-text`}
-                                    href={triggerHref}
-                                    onClick={this.handleDropdownClick}>
-                                    {selectedLabel}
-                                </a>
-                                <ChevronDownGlyph>
-                                    {iconDescription && <title>{iconDescription}</title>}
-                                </ChevronDownGlyph>
-                            </div>
-                             <ul role="tablist" className={classes.tablist}>
-                                {tabsWithProps}
-                             </ul>
-                        </div>
-                    </Column>
-                </Row>
+                <div {...other} className={classes.tabs} role={role}>
+                    <div
+                        role="listbox"
+                        aria-label={ariaLabel}
+                        tabIndex={0}
+                        className={`${prefix}--tabs-trigger`}
+                        onClick={this.handleDropdownClick}
+                        onKeyPress={this.handleDropdownClick}>
+                        <a
+                            tabIndex={-1}
+                            className={`${prefix}--tabs-trigger-text`}
+                            href={triggerHref}
+                            onClick={this.handleDropdownClick}>
+                            {selectedLabel}
+                        </a>
+                        <ChevronDownGlyph>
+                            {iconDescription && <title>{iconDescription}</title>}
+                        </ChevronDownGlyph>
+                    </div>
+                    <ul role="tablist" className={classes.tablist}>
+                        {tabsWithProps}
+                    </ul>
+                </div>
                 {selectedTab}
             </>
         );
     }
 }
+
 Tabs.propTypes = {
     /**
      * Specify the text to be read by screen-readers when visiting the <Tabs>
@@ -188,6 +183,7 @@ Tabs.propTypes = {
      */
     ariaLabel: PropTypes.string,
 
+    style: PropTypes.object,
     /**
      * Pass in a collection of <Tab> children to be rendered depending on the
      * currently selected tab

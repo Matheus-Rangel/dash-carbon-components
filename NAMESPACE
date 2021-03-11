@@ -1,5 +1,6 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+export(Button)
 export(Card)
 export(Checkbox)
 export(Column)
@@ -26,6 +27,7 @@ export(tabs)
 export(column)
 export(slider)
 export(numberInput)
+export(button)
 export(uIPage)
 export(dashCarbonComponents)
 export(datePicker)

@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import Slider from './components/Slider';
 import UIShell from './components/UIShell';
+import Button from './components/Button';
 import Checkbox from './components/Checkbox';
 import Column from './components/Column';
 import Row from './components/Row';
@@ -17,6 +18,7 @@ import Tab from './components/Tab';
 
 import '../index.scss'
 export {
+    Button,
     Card,
     Checkbox,
     Column,

@@ -12,6 +12,7 @@ Keyword arguments:
 currently selected tab
 - ariaLabel (string; default 'listbox'): Specify the text to be read by screen-readers when visiting the <Tabs>
 component
+- style (dict; optional)
 - className (string; optional): Provide a className that is applied to the root <nav> component for the
 <Tabs>
 - hidden (boolean; optional): Specify whether the Tab content is hidden
@@ -29,12 +30,12 @@ components in an app.
 - headerSizes (list of strings; optional): Number of columns the header will have
 - value (string; optional): Value of the selected tab"""
     @_explicitize_args
-    def __init__(self, children=None, ariaLabel=Component.UNDEFINED, className=Component.UNDEFINED, hidden=Component.UNDEFINED, role=Component.UNDEFINED, onClick=Component.UNDEFINED, onKeyDown=Component.UNDEFINED, triggerHref=Component.UNDEFINED, selected=Component.UNDEFINED, iconDescription=Component.UNDEFINED, tabContentClassName=Component.UNDEFINED, id=Component.UNDEFINED, headerOffsets=Component.UNDEFINED, headerSizes=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'ariaLabel', 'className', 'hidden', 'role', 'triggerHref', 'selected', 'iconDescription', 'tabContentClassName', 'id', 'headerOffsets', 'headerSizes', 'value']
+    def __init__(self, children=None, ariaLabel=Component.UNDEFINED, style=Component.UNDEFINED, className=Component.UNDEFINED, hidden=Component.UNDEFINED, role=Component.UNDEFINED, onClick=Component.UNDEFINED, onKeyDown=Component.UNDEFINED, triggerHref=Component.UNDEFINED, selected=Component.UNDEFINED, iconDescription=Component.UNDEFINED, tabContentClassName=Component.UNDEFINED, id=Component.UNDEFINED, headerOffsets=Component.UNDEFINED, headerSizes=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'ariaLabel', 'style', 'className', 'hidden', 'role', 'triggerHref', 'selected', 'iconDescription', 'tabContentClassName', 'id', 'headerOffsets', 'headerSizes', 'value']
         self._type = 'Tabs'
         self._namespace = 'dash_carbon_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'ariaLabel', 'className', 'hidden', 'role', 'triggerHref', 'selected', 'iconDescription', 'tabContentClassName', 'id', 'headerOffsets', 'headerSizes', 'value']
+        self.available_properties = ['children', 'ariaLabel', 'style', 'className', 'hidden', 'role', 'triggerHref', 'selected', 'iconDescription', 'tabContentClassName', 'id', 'headerOffsets', 'headerSizes', 'value']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

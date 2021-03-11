@@ -1,3 +1,4 @@
+from .Button import Button
 from .Card import Card
 from .Checkbox import Checkbox
 from .Column import Column
@@ -15,6 +16,7 @@ from .Tabs import Tabs
 from .UIShell import UIShell
 
 __all__ = [
+    "Button",
     "Card",
     "Checkbox",
     "Column",

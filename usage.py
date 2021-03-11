@@ -93,6 +93,14 @@ inputs_layout = dca.Grid(id='content', children=[
                 ]),
             ])
         ]),
+        dca.Column(columnSizes=['lg-4 md-5'], children=[
+            dca.Card(title='Buttons', children=[
+                html.Div([
+                    dca.Button(id='button2', kind='secondary', children=['Secondary']),
+                    dca.Button(id='button1', kind='primary', style={'marginLeft': '1px'}, children=['Primary']),
+                ]),
+            ])
+        ]),
     ]),
     dca.Tabs(id='tabs', headerOffsets=['lg-2'], headerSizes=['lg-10'], children=[
         dca.Tab(value='tab1', label='Tab 1', children=[
