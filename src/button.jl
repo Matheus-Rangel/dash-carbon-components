@@ -16,7 +16,7 @@ Keyword arguments:
 - `style` (Dict; optional)
 - `className` (String; optional)
 - `disabled` (Bool; optional)
-- `kind` (String; optional)
+- `kind` (String; required)
 - `size` (a value equal to: 'default', 'field', 'small', 'sm', 'lg', 'xl'; optional)
 - `n_clicks` (Real; optional)
 """

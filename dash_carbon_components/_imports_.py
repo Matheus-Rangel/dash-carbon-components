@@ -4,7 +4,9 @@ from .Checkbox import Checkbox
 from .Column import Column
 from .DatePicker import DatePicker
 from .DatePickerRange import DatePickerRange
+from .Dropdown import Dropdown
 from .Grid import Grid
+from .Link import Link
 from .MultiSelect import MultiSelect
 from .MultiSelectFilterable import MultiSelectFilterable
 from .NumberInput import NumberInput
@@ -22,7 +24,9 @@ __all__ = [
     "Column",
     "DatePicker",
     "DatePickerRange",
+    "Dropdown",
     "Grid",
+    "Link",
     "MultiSelect",
     "MultiSelectFilterable",
     "NumberInput",

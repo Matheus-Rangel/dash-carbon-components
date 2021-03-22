@@ -1,8 +1,8 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-multiSelect <- function(disabled=NULL, locale=NULL, light=NULL, selectionFeedback=NULL, direction=NULL, id=NULL, invalid=NULL, invalidText=NULL, items=NULL, label=NULL, size=NULL, titleText=NULL, selectedItems=NULL) {
+multiSelect <- function(disabled=NULL, style=NULL, locale=NULL, light=NULL, selectionFeedback=NULL, direction=NULL, id=NULL, invalid=NULL, invalidText=NULL, options=NULL, label=NULL, size=NULL, titleText=NULL, value=NULL) {
     
-    props <- list(disabled=disabled, locale=locale, light=light, selectionFeedback=selectionFeedback, direction=direction, id=id, invalid=invalid, invalidText=invalidText, items=items, label=label, size=size, titleText=titleText, selectedItems=selectedItems)
+    props <- list(disabled=disabled, style=style, locale=locale, light=light, selectionFeedback=selectionFeedback, direction=direction, id=id, invalid=invalid, invalidText=invalidText, options=options, label=label, size=size, titleText=titleText, value=value)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -10,7 +10,7 @@ multiSelect <- function(disabled=NULL, locale=NULL, light=NULL, selectionFeedbac
         props = props,
         type = 'MultiSelect',
         namespace = 'dash_carbon_components',
-        propNames = c('disabled', 'locale', 'light', 'selectionFeedback', 'direction', 'id', 'invalid', 'invalidText', 'items', 'label', 'size', 'titleText', 'selectedItems'),
+        propNames = c('disabled', 'style', 'locale', 'light', 'selectionFeedback', 'direction', 'id', 'invalid', 'invalidText', 'options', 'label', 'size', 'titleText', 'value'),
         package = 'dashCarbonComponents'
         )
 

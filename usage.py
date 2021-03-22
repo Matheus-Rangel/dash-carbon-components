@@ -56,14 +56,21 @@ inputs_layout = dca.Grid(id='content', children=[
     dca.Row(style={'marginTop': '24px'}, children=[
         dca.Column(columnSizes=['lg-3 md-5'], offsetSizes=['lg-2'], children=[
             dca.Card(title='Multiselect', children=[
-                dca.MultiSelect(id='multiselect', titleText='Fruits', items=['Apple', 'Orange', 'Grape'],
+                dca.MultiSelect(id='multiselect', titleText='Fruits', options=['Apple', 'Orange', 'Grape'],
                                 label='Fruits')
             ])
         ]),
         dca.Column(columnSizes=['lg-3 md-5'], children=[
             dca.Card(title='Multiselect Filterable', children=[
-                dca.MultiSelectFilterable(id='multiselect', titleText='Fruits', items=['Apple', 'Orange', 'Grape'],
-                                          label='Fruits')
+                dca.MultiSelectFilterable(id='multiselect', titleText='Fruits',
+                                          value=['apple'],
+                                          options=[
+                                              {'label': 'Apple', 'value': 'apple'},
+                                              {'label': 'Orange', 'value': 'orange'},
+                                              {'label': 'Grape', 'value': 'grape'}
+                                          ],
+                                          label='Fruits'),
+                dca.Link(children='Select all')
             ])
         ]),
         dca.Column(columnSizes=['lg-3 md-5'], children=[
@@ -101,8 +108,22 @@ inputs_layout = dca.Grid(id='content', children=[
                 ]),
             ])
         ]),
+        dca.Column(columnSizes=['lg-4 md-5'], style={'marginTop': '16px'}, offsetSizes=['lg-2'], children=[
+            dca.Card(title='Dropdown', children=[
+                html.Div([
+                    dca.Dropdown(
+                        options=[
+                            {'label': 'Apple', 'value': 'apple'},
+                            {'label': 'Orange', 'value': 'orange'},
+                            {'label': 'Grape', 'value': 'grape'}
+                        ],
+                        id='dropdown',
+                        label='Fruits')
+                ]),
+            ])
+        ]),
     ]),
-    dca.Tabs(id='tabs', headerOffsets=['lg-2'], headerSizes=['lg-10'], children=[
+    dca.Tabs(id='tabs', headerOffsets=['lg-2'], headerSizes=['lg-10'], className='bx--offset-lg-2', children=[
         dca.Tab(value='tab1', label='Tab 1', children=[
             dca.Row(style={'marginTop': '24px'}, children=[
                 dca.Column(columnSizes=['lg-3'], offsetSizes=['lg-2'], children=[

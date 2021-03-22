@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {MultiSelect as MultiSelectCarbon} from 'carbon-components-react';
 import PropTypes from 'prop-types';
 
@@ -6,27 +6,35 @@ import PropTypes from 'prop-types';
  * MultiSelect
  */
 const MultiSelect = ({
-                         disabled, locale, selectedItems, light, selectionFeedback, direction, id, invalid,
-                         invalidText, items, label, setProps, size, titleText
+                         disabled, locale, value, light, selectionFeedback, direction, id, invalid,
+                         invalidText, options, label, setProps, size, titleText, style
                      }) => {
-    const [currentItems, setCurrentItems] = useState(selectedItems);
+    const [currentItems, setCurrentItems] = useState([]);
     const [menuOpen, setMenuOpen] = useState(false);
+    const initialSelectedItems = options.filter(item=> item.value ?  value.includes(item.value) : value.includes(item))
+    useEffect(() => {
+        setCurrentItems(initialSelectedItems)
+    }, [value]);
+    const updateProps = (value) => {
+        const values = value.map(item => item.value ? item.value : item)
+        setProps({value: values})
+    }
     return (
-        <MultiSelectCarbon
-            disabled={disabled} locale={locale} initialSelectedItems={selectedItems} light={light}
+        <MultiSelectCarbon key={initialSelectedItems}
+            disabled={disabled} locale={locale} initialSelectedItems={initialSelectedItems} light={light}
             selectionFeedback={selectionFeedback} direction={direction} id={id} invalid={invalid}
-            invalidText={invalidText} items={items} label={label} size={size}
-            titleText={titleText} itemToString={(item) => item}
+            invalidText={invalidText} items={options} label={label} size={size} style={style}
+            titleText={titleText} itemToString={(item) => item.label ? item.label : item}
             onChange={({selectedItems}) => {
                 if (!menuOpen) {
-                    setProps({selectedItems})
-                }else {
+                    updateProps(selectedItems)
+                } else {
                     setCurrentItems(selectedItems)
                 }
             }}
             onMenuChange={(menuChange) => {
                 if (!menuChange) {
-                    setProps({selectedItems: currentItems})
+                    updateProps(currentItems)
                 } else {
                     setMenuOpen(menuChange)
                 }
@@ -39,6 +47,7 @@ MultiSelect.propTypes = {
      * Disable the control
      */
     disabled: PropTypes.bool,
+    style: PropTypes.object,
     /**
      * Specify the locale of the control.
      * Used for the default compareItems used for sorting the list of items in the control.
@@ -76,11 +85,15 @@ MultiSelect.propTypes = {
     /**
      * List of items
      */
-    items: PropTypes.arrayOf(PropTypes.string).isRequired,
+    options: PropTypes.arrayOf(PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.shape({label: PropTypes.string, value: PropTypes.any})
+    ])).isRequired,
+
     /**
      * Generic label that will be used as the textual representation of what this field is for
      */
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string,
     /**
      * Specify the size of the ListBox. Currently supports either sm, lg or xl as an option.
      */
@@ -92,11 +105,11 @@ MultiSelect.propTypes = {
     /**
      * The list of the selected items
      */
-    selectedItems: PropTypes.arrayOf(PropTypes.string),
+    value: PropTypes.arrayOf(PropTypes.any),
     /** Prop passed by Dash */
     setProps: PropTypes.func,
 }
 MultiSelect.defaultProps = {
-    selectedItems: []
+    value: []
 }
 export default MultiSelect

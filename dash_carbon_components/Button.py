@@ -13,11 +13,11 @@ Keyword arguments:
 - style (dict; optional)
 - className (string; optional)
 - disabled (boolean; optional)
-- kind (string; optional)
+- kind (string; required)
 - size (a value equal to: 'default', 'field', 'small', 'sm', 'lg', 'xl'; optional)
 - n_clicks (number; default 0)"""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.REQUIRED, style=Component.UNDEFINED, className=Component.UNDEFINED, disabled=Component.UNDEFINED, kind=Component.UNDEFINED, size=Component.UNDEFINED, n_clicks=Component.UNDEFINED, **kwargs):
+    def __init__(self, children=None, id=Component.REQUIRED, style=Component.UNDEFINED, className=Component.UNDEFINED, disabled=Component.UNDEFINED, kind=Component.REQUIRED, size=Component.UNDEFINED, n_clicks=Component.UNDEFINED, **kwargs):
         self._prop_names = ['children', 'id', 'style', 'className', 'disabled', 'kind', 'size', 'n_clicks']
         self._type = 'Button'
         self._namespace = 'dash_carbon_components'
@@ -30,7 +30,7 @@ Keyword arguments:
         _locals.update(kwargs)  # For wildcard attrs
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
 
-        for k in ['id']:
+        for k in ['id', 'kind']:
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')

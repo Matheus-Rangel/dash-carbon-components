@@ -9,6 +9,7 @@ A MultiSelect component.
 MultiSelect
 Keyword arguments:
 - `disabled` (Bool; optional): Disable the control
+- `style` (Dict; optional)
 - `locale` (String; optional): Specify the locale of the control.
 Used for the default compareItems used for sorting the list of items in the control.
 - `light` (Bool; optional): true to use the light version.
@@ -22,14 +23,17 @@ default bottom
 - `id` (String; required): Id of the element
 - `invalid` (Bool; optional): Is the current selection invalid.
 - `invalidText` (String; optional): The text to show if it is invalid.
-- `items` (Array of Strings; required): List of items
-- `label` (String; required): Generic label that will be used as the textual representation of what this field is for
+- `options` (required): List of items. options has the following type: Array of String | lists containing elements 'label', 'value'.
+Those elements have the following types:
+  - `label` (String; optional)
+  - `value` (Bool | Real | String | Dict | Array; optional)s
+- `label` (String; optional): Generic label that will be used as the textual representation of what this field is for
 - `size` (a value equal to: 'sm', 'lg', 'xl'; optional): Specify the size of the ListBox. Currently supports either sm, lg or xl as an option.
 - `titleText` (String; optional): Provide text to be used in a <label> element that is tied to the multiselect via ARIA attributes.
-- `selectedItems` (Array of Strings; optional): The list of the selected items
+- `value` (Array of Bool | Real | String | Dict | Arrays; optional): The list of the selected items
 """
 function multiselect(; kwargs...)
-        available_props = Symbol[:disabled, :locale, :light, :selectionFeedback, :direction, :id, :invalid, :invalidText, :items, :label, :size, :titleText, :selectedItems]
+        available_props = Symbol[:disabled, :style, :locale, :light, :selectionFeedback, :direction, :id, :invalid, :invalidText, :options, :label, :size, :titleText, :value]
         wild_props = Symbol[]
         return Component("multiselect", "MultiSelect", "dash_carbon_components", available_props, wild_props; kwargs...)
 end

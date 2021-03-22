@@ -10,14 +10,16 @@ MultiSelect
 }
 
 \usage{
-multiSelectFilterable(disabled=NULL, locale=NULL, light=NULL,
+multiSelectFilterable(disabled=NULL, style=NULL, locale=NULL, light=NULL,
 selectionFeedback=NULL, direction=NULL, id=NULL,
-invalid=NULL, invalidText=NULL, items=NULL, label=NULL,
-size=NULL, titleText=NULL, selectedItems=NULL)
+invalid=NULL, invalidText=NULL, options=NULL, label=NULL,
+size=NULL, titleText=NULL, value=NULL)
 }
 
 \arguments{
 \item{disabled}{Logical. Disable the control}
+
+\item{style}{Named list. }
 
 \item{locale}{Character. Specify the locale of the control.
 Used for the default compareItems used for sorting the list of items in the control.}
@@ -39,7 +41,10 @@ default bottom}
 
 \item{invalidText}{Character. The text to show if it is invalid.}
 
-\item{items}{List of characters. List of items}
+\item{options}{List of character | lists containing elements 'label', 'value'.
+those elements have the following types:
+  - label (character; optional)
+  - value (logical | numeric | character | named list | unnamed list; optional)s. List of items}
 
 \item{label}{Character. Generic label that will be used as the textual representation of what this field is for}
 
@@ -47,7 +52,7 @@ default bottom}
 
 \item{titleText}{Character. Provide text to be used in a <label> element that is tied to the multiselect via ARIA attributes.}
 
-\item{selectedItems}{List of characters. The list of the selected items}
+\item{value}{List of logical | numeric | character | named list | unnamed lists. The list of the selected items}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

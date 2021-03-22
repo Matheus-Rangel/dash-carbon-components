@@ -54,7 +54,7 @@
         "type": {
           "name": "string"
         },
-        "required": false,
+        "required": true,
         "description": ""
       },
       "size": {
@@ -197,7 +197,7 @@
         "type": {
           "name": "bool"
         },
-        "required": true,
+        "required": false,
         "description": ""
       },
       "title": {
@@ -210,6 +210,20 @@
       "setProps": {
         "type": {
           "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "className": {
+        "type": {
+          "name": "string"
         },
         "required": false,
         "description": ""
@@ -491,6 +505,159 @@
       }
     }
   },
+  "src/lib/components/Dropdown.js": {
+    "description": "",
+    "displayName": "Dropdown",
+    "methods": [],
+    "props": {
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disable the control"
+      },
+      "options": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "union",
+            "value": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "shape",
+                "value": {
+                  "label": {
+                    "name": "string",
+                    "required": false
+                  },
+                  "value": {
+                    "name": "any",
+                    "required": false
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "required": false,
+        "description": "List of items",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Specify a custom `id`"
+      },
+      "inline": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Specify whether you want the inline version of this control"
+      },
+      "invalid": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Specify if the currently selected value is invalid."
+      },
+      "invalidText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Message which is displayed if the value is invalid."
+      },
+      "label": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Generic `label` that will be used as the textual representation of what\nthis field is for"
+      },
+      "translateWithId": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback function for translating ListBoxMenuIcon SVG title"
+      },
+      "ariaLabel": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "'aria-label' of the ListBox component."
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "In the case you want to control the dropdown selection entirely."
+      },
+      "light": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "`true` to use the light version."
+      },
+      "titleText": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "node"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Provide the title text that will be read by a screen reader when\nvisiting this control"
+      },
+      "helperText": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "node"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Provide helper text that is used alongside the control label for\nadditional help"
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Function passed by Dash"
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Style of the component"
+      }
+    }
+  },
   "src/lib/components/Grid.js": {
     "description": "Carbon Grid",
     "displayName": "Grid",
@@ -541,6 +708,112 @@
       }
     }
   },
+  "src/lib/components/Link.js": {
+    "description": "",
+    "displayName": "Link",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "inline": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "size": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'sm'",
+              "computed": false
+            },
+            {
+              "value": "'lg'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "n_clicks": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "visited": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "node"
+              }
+            },
+            {
+              "name": "node"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
   "src/lib/components/MultiSelect.js": {
     "description": "MultiSelect",
     "displayName": "MultiSelect",
@@ -552,6 +825,13 @@
         },
         "required": false,
         "description": "Disable the control"
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
       },
       "locale": {
         "type": {
@@ -622,11 +902,29 @@
         "required": false,
         "description": "The text to show if it is invalid."
       },
-      "items": {
+      "options": {
         "type": {
           "name": "arrayOf",
           "value": {
-            "name": "string"
+            "name": "union",
+            "value": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "shape",
+                "value": {
+                  "label": {
+                    "name": "string",
+                    "required": false
+                  },
+                  "value": {
+                    "name": "any",
+                    "required": false
+                  }
+                }
+              }
+            ]
           }
         },
         "required": true,
@@ -636,7 +934,7 @@
         "type": {
           "name": "string"
         },
-        "required": true,
+        "required": false,
         "description": "Generic label that will be used as the textual representation of what this field is for"
       },
       "size": {
@@ -667,11 +965,11 @@
         "required": false,
         "description": "Provide text to be used in a <label> element that is tied to the multiselect via ARIA attributes."
       },
-      "selectedItems": {
+      "value": {
         "type": {
           "name": "arrayOf",
           "value": {
-            "name": "string"
+            "name": "any"
           }
         },
         "required": false,
@@ -702,6 +1000,13 @@
         "required": false,
         "description": "Disable the control"
       },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
       "locale": {
         "type": {
           "name": "string"
@@ -771,11 +1076,29 @@
         "required": false,
         "description": "The text to show if it is invalid."
       },
-      "items": {
+      "options": {
         "type": {
           "name": "arrayOf",
           "value": {
-            "name": "string"
+            "name": "union",
+            "value": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "shape",
+                "value": {
+                  "label": {
+                    "name": "string",
+                    "required": false
+                  },
+                  "value": {
+                    "name": "any",
+                    "required": false
+                  }
+                }
+              }
+            ]
           }
         },
         "required": true,
@@ -785,7 +1108,7 @@
         "type": {
           "name": "string"
         },
-        "required": true,
+        "required": false,
         "description": "Generic label that will be used as the textual representation of what this field is for"
       },
       "size": {
@@ -816,11 +1139,11 @@
         "required": false,
         "description": "Provide text to be used in a <label> element that is tied to the multiselect via ARIA attributes."
       },
-      "selectedItems": {
+      "value": {
         "type": {
           "name": "arrayOf",
           "value": {
-            "name": "string"
+            "name": "any"
           }
         },
         "required": false,

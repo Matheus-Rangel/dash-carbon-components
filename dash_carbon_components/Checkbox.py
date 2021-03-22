@@ -11,15 +11,17 @@ Keyword arguments:
 - id (string; required)
 - label (string; required)
 - disabled (boolean; optional)
-- value (boolean; required)
-- title (string; optional)"""
+- value (boolean; optional)
+- title (string; optional)
+- style (dict; optional)
+- className (string; optional)"""
     @_explicitize_args
-    def __init__(self, id=Component.REQUIRED, label=Component.REQUIRED, disabled=Component.UNDEFINED, value=Component.REQUIRED, title=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'label', 'disabled', 'value', 'title']
+    def __init__(self, id=Component.REQUIRED, label=Component.REQUIRED, disabled=Component.UNDEFINED, value=Component.UNDEFINED, title=Component.UNDEFINED, style=Component.UNDEFINED, className=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'label', 'disabled', 'value', 'title', 'style', 'className']
         self._type = 'Checkbox'
         self._namespace = 'dash_carbon_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'label', 'disabled', 'value', 'title']
+        self.available_properties = ['id', 'label', 'disabled', 'value', 'title', 'style', 'className']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
@@ -27,7 +29,7 @@ Keyword arguments:
         _locals.update(kwargs)  # For wildcard attrs
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
 
-        for k in ['id', 'label', 'value']:
+        for k in ['id', 'label']:
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')
