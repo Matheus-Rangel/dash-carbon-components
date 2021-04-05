@@ -14,14 +14,15 @@ Keyword arguments:
 in callbacks. The ID needs to be unique across all of the
 components in an app.
 - className (string; default ''): The class of the element
-- title (string; optional): Title of the card"""
+- title (string; optional): Title of the card
+- info (string; optional): Additional information about the content of this card."""
     @_explicitize_args
-    def __init__(self, children=None, style=Component.UNDEFINED, id=Component.UNDEFINED, className=Component.UNDEFINED, title=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'style', 'id', 'className', 'title']
+    def __init__(self, children=None, style=Component.UNDEFINED, id=Component.UNDEFINED, className=Component.UNDEFINED, title=Component.UNDEFINED, info=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'style', 'id', 'className', 'title', 'info']
         self._type = 'Card'
         self._namespace = 'dash_carbon_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'style', 'id', 'className', 'title']
+        self.available_properties = ['children', 'style', 'id', 'className', 'title', 'info']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

@@ -164,6 +164,13 @@
         },
         "required": false,
         "description": "Title of the card"
+      },
+      "info": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Additional information about the content of this card."
       }
     }
   },

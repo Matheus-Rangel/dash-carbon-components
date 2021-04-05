@@ -29,7 +29,7 @@ nav_layout = html.Div([
 inputs_layout = dca.Grid(id='content', children=[
     dca.Row(children=[
         dca.Column(columnSizes=['lg-4 md-5'], offsetSizes=['lg-2'], children=[
-            dca.Card(title='Slider', children=[
+            dca.Card(title='Slider', info='Card Info', children=[
                 html.Div(style={'display': 'flex', 'flexDirection': 'row'}, children=[
                     dca.Slider(
                         id='slider',

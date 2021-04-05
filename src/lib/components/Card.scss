@@ -1,18 +1,25 @@
-.card-title {
-  margin-bottom: 8px;
+.card-header {
   display: flex;
-  align-content: center;
+  height: 32px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
   font-weight: bold;
 }
+
 .card-body {
   width: 100%;
   margin-top: 8px;
 }
+
 .card {
   background-color: #ffffff;
   width: 100%;
-  padding: 16px;
+  padding: 0 16px 16px 16px;
 }
+
 .card-divider {
   width: calc(100% + 32px);
   margin-left: -16px;

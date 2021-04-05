@@ -11,7 +11,7 @@ Card
 
 \usage{
 card(children=NULL, style=NULL, id=NULL, className=NULL,
-title=NULL)
+title=NULL, info=NULL)
 }
 
 \arguments{
@@ -26,6 +26,8 @@ components in an app.}
 \item{className}{Character. The class of the element}
 
 \item{title}{Character. Title of the card}
+
+\item{info}{Character. Additional information about the content of this card.}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

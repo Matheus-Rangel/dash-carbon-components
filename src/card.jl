@@ -18,9 +18,10 @@ in callbacks. The ID needs to be unique across all of the
 components in an app.
 - `className` (String; optional): The class of the element
 - `title` (String; optional): Title of the card
+- `info` (String; optional): Additional information about the content of this card.
 """
 function card(; kwargs...)
-        available_props = Symbol[:children, :style, :id, :className, :title]
+        available_props = Symbol[:children, :style, :id, :className, :title, :info]
         wild_props = Symbol[]
         return Component("card", "Card", "dash_carbon_components", available_props, wild_props; kwargs...)
 end
