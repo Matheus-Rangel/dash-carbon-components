@@ -29,21 +29,23 @@ nav_layout = html.Div([
 inputs_layout = dca.Grid(id='content', children=[
     dca.Row(children=[
         dca.Column(columnSizes=['lg-4 md-5'], offsetSizes=['lg-2'], children=[
-            dca.Card(title='Slider', info='Card Info', children=[
-                html.Div(style={'display': 'flex', 'flexDirection': 'row'}, children=[
-                    dca.Slider(
-                        id='slider',
-                        labelText='Slider',
-                        max=100,
-                        min=0,
-                        step=1,
-                        value=50,
-                    ),
-                ])
-            ])
+            dca.Card(title='Slider', info='Card Info',
+                     actions=[{'displayName': 'Action Test', 'actionPropName': 'test_action'}],
+                     children=[
+                         html.Div(style={'display': 'flex', 'flexDirection': 'row'}, children=[
+                             dca.Slider(
+                                 id='slider',
+                                 labelText='Slider',
+                                 max=100,
+                                 min=0,
+                                 step=1,
+                                 value=50,
+                             ),
+                         ])
+                     ])
         ]),
         dca.Column(columnSizes=['lg-4 md-5'], children=[
-            dca.Card(title='Date Picker', style={'display': 'flex', 'justifyContent': 'center'}, children=[
+            dca.Card(title='Date Picker', info='Card Info', style={'display': 'flex', 'justifyContent': 'center'}, children=[
                 dca.DatePickerRange(
                     id='date-picker',
                     placeholder='mm/dd/yyyy',
@@ -94,11 +96,12 @@ inputs_layout = dca.Grid(id='content', children=[
             ])
         ]),
         dca.Column(columnSizes=['lg-2 md-5'], children=[
-            dca.Card(title='Checkbox', children=[
-                html.Div([
-                    dca.Checkbox(value=False, id='Checkbox', label='Check me', title='CHECK ME')
-                ]),
-            ])
+            dca.Card(title='Checkbox',
+                     children=[
+                         html.Div([
+                             dca.Checkbox(value=False, id='Checkbox', label='Check me', title='CHECK ME')
+                         ]),
+                     ])
         ]),
         dca.Column(columnSizes=['lg-4 md-5'], children=[
             dca.Card(title='Buttons', children=[

@@ -1,11 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import './Card.scss'
-import {Tooltip} from 'carbon-components-react';
+import {OverflowMenu, OverflowMenuItem, Tooltip} from 'carbon-components-react';
+import PropTypes from 'prop-types'
+
 /**
  * Card
  */
-const Card = ({children, title, style, className, info}) => {
+const Card = ({children, title, style, className, info, actions, setProps, ...others}) => {
+    const actionClick = (actionPropName) => setProps(
+        {[actionPropName]: others[actionPropName] ? others[actionPropName] + 1 : 1}
+    )
     return (
         <div className={'card'}>
             {title &&
@@ -14,11 +18,28 @@ const Card = ({children, title, style, className, info}) => {
                     <div className={'card-title'}>
                         {title}
                     </div>
-                    {info &&
-                        <Tooltip iconDescription={`Card ${title} Info`}>
-                            <p>{info}</p>
-                        </Tooltip>
-                    }
+                    <div className={'card-header-buttons'}>
+                        {info &&
+                        <div style={{marginRight: actions.length > 0 ? '4px' : '16px'}}>
+                            <Tooltip
+                                     iconDescription={`Card ${title} Info`}>
+                                <p>{info}</p>
+                            </Tooltip>
+                        </div>
+                        }
+                        {actions.length > 0 &&
+                        <OverflowMenu>
+                            {actions.map(action => (
+                                    <OverflowMenuItem
+                                        key={action.actionPropName}
+                                        itemText={action.displayName}
+                                        onClick={() => actionClick(action.actionPropName)}
+                                    />
+                                )
+                            )}
+                        </OverflowMenu>
+                        }
+                    </div>
                 </div>
                 <div className={'card-divider'}/>
             </>
@@ -29,7 +50,7 @@ const Card = ({children, title, style, className, info}) => {
             </div>
         </div>
     )
-}
+};
 Card.propTypes = {
     /**
      * The inline styles
@@ -60,8 +81,19 @@ Card.propTypes = {
      * Additional information about the content of this card.
      */
     info: PropTypes.string,
+    /**
+     * Actions available on the side menu, button clicks will be outputted to the actionPropName prop of this card
+     */
+    actions: PropTypes.arrayOf(
+        PropTypes.shape({displayName: PropTypes.string, actionPropName: PropTypes.string})
+    ),
+    /**
+     * Dash function
+     */
+    setProps: PropTypes.func
 }
 Card.defaultProps = {
-    className: ''
+    className: '',
+    actions: []
 }
 export default Card;

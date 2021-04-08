@@ -11,7 +11,7 @@ Card
 
 \usage{
 card(children=NULL, style=NULL, id=NULL, className=NULL,
-title=NULL, info=NULL)
+title=NULL, info=NULL, actions=NULL)
 }
 
 \arguments{
@@ -28,6 +28,11 @@ components in an app.}
 \item{title}{Character. Title of the card}
 
 \item{info}{Character. Additional information about the content of this card.}
+
+\item{actions}{List of lists containing elements 'displayname', 'actionpropname'.
+those elements have the following types:
+  - displayname (character; optional)
+  - actionpropname (character; optional)s. Actions available on the side menu, button clicks will be outputted to the actionPropName prop of this card}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

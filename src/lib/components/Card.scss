@@ -1,23 +1,26 @@
 .card-header {
   display: flex;
-  height: 32px;
+  height: 40px;
   justify-content: space-between;
   align-items: center;
 }
-
+.card-header-buttons{
+  display: flex;
+  align-items: center;
+}
 .card-title {
   font-weight: bold;
+  padding-left: 16px;
 }
 
 .card-body {
   width: 100%;
-  margin-top: 8px;
+  padding: 8px 16px 16px 16px;
 }
 
 .card {
   background-color: #ffffff;
   width: 100%;
-  padding: 0 16px 16px 16px;
 }
 
 .card-divider {

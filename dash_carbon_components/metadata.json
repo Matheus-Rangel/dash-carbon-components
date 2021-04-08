@@ -171,6 +171,37 @@
         },
         "required": false,
         "description": "Additional information about the content of this card."
+      },
+      "actions": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "displayName": {
+                "name": "string",
+                "required": false
+              },
+              "actionPropName": {
+                "name": "string",
+                "required": false
+              }
+            }
+          }
+        },
+        "required": false,
+        "description": "Actions available on the side menu, button clicks will be outputted to the actionPropName prop of this card",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash function"
       }
     }
   },

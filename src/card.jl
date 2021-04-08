@@ -19,9 +19,13 @@ components in an app.
 - `className` (String; optional): The class of the element
 - `title` (String; optional): Title of the card
 - `info` (String; optional): Additional information about the content of this card.
+- `actions` (optional): Actions available on the side menu, button clicks will be outputted to the actionPropName prop of this card. actions has the following type: Array of lists containing elements 'displayName', 'actionPropName'.
+Those elements have the following types:
+  - `displayName` (String; optional)
+  - `actionPropName` (String; optional)s
 """
 function card(; kwargs...)
-        available_props = Symbol[:children, :style, :id, :className, :title, :info]
+        available_props = Symbol[:children, :style, :id, :className, :title, :info, :actions]
         wild_props = Symbol[]
         return Component("card", "Card", "dash_carbon_components", available_props, wild_props; kwargs...)
 end
