@@ -3,10 +3,10 @@ import {Dropdown as CarbonDropdown} from "carbon-components-react";
 import PropTypes from 'prop-types'
 
 const Dropdown = ({setProps, value, options, ...others}) => {
-    const selectedItems = options.find(item=> item.value ?  value === item.value : value === item);
+    const selectedItems = options.find(item=> 'value' in item ? value === item.value : value === item);
     return <CarbonDropdown
         onChange={({selectedItem}) => {
-            const value = selectedItem.value || selectedItem;
+            const value = 'value' in selectedItem ? selectedItem.value : selectedItem;
             setProps({value})
         }}
         selectedItem={selectedItems}
@@ -69,7 +69,7 @@ Dropdown.propTypes = {
     /**
      * In the case you want to control the dropdown selection entirely.
      */
-    value: PropTypes.string,
+    value: PropTypes.any,
 
     /**
      * `true` to use the light version.

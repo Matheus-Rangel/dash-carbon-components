@@ -59,7 +59,7 @@ const NumberInput = ({
         value={value}
         warn={warn}
         warnText={warnText}
-        onBlur={setValue}
+        onChange={setValue}
     />
 }
 NumberInput.propTypes = {

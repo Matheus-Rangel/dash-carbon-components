@@ -16,7 +16,7 @@ const MultiSelect = ({
         setCurrentItems(initialSelectedItems)
     }, [value]);
     const updateProps = (value) => {
-        const values = value.map(item => item.value ? item.value : item)
+        const values = value.map(item => 'value' in item ? item.value : item)
         setProps({value: values})
     }
     return (

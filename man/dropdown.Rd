@@ -39,7 +39,7 @@ this field is for}
 
 \item{ariaLabel}{Character. 'aria-label' of the ListBox component.}
 
-\item{value}{Character. In the case you want to control the dropdown selection entirely.}
+\item{value}{Logical | numeric | character | named list | unnamed list. In the case you want to control the dropdown selection entirely.}
 
 \item{light}{Logical. `true` to use the light version.}
 

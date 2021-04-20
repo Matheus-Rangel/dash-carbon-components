@@ -196,6 +196,13 @@
           "computed": false
         }
       },
+      "action_click": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The action click value"
+      },
       "setProps": {
         "type": {
           "name": "func"
@@ -638,7 +645,7 @@
       },
       "value": {
         "type": {
-          "name": "string"
+          "name": "any"
         },
         "required": false,
         "description": "In the case you want to control the dropdown selection entirely."

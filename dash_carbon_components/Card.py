@@ -19,14 +19,15 @@ components in an app.
 - actions (dict; optional): Actions available on the side menu, button clicks will be outputted to the actionPropName prop of this card. actions has the following type: list of dicts containing keys 'displayName', 'actionPropName'.
 Those keys have the following types:
   - displayName (string; optional)
-  - actionPropName (string; optional)"""
+  - actionPropName (string; optional)
+- action_click (string; optional): The action click value"""
     @_explicitize_args
-    def __init__(self, children=None, style=Component.UNDEFINED, id=Component.UNDEFINED, className=Component.UNDEFINED, title=Component.UNDEFINED, info=Component.UNDEFINED, actions=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'style', 'id', 'className', 'title', 'info', 'actions']
+    def __init__(self, children=None, style=Component.UNDEFINED, id=Component.UNDEFINED, className=Component.UNDEFINED, title=Component.UNDEFINED, info=Component.UNDEFINED, actions=Component.UNDEFINED, action_click=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'style', 'id', 'className', 'title', 'info', 'actions', 'action_click']
         self._type = 'Card'
         self._namespace = 'dash_carbon_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'style', 'id', 'className', 'title', 'info', 'actions']
+        self.available_properties = ['children', 'style', 'id', 'className', 'title', 'info', 'actions', 'action_click']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

@@ -6,9 +6,9 @@ import PropTypes from 'prop-types'
 /**
  * Card
  */
-const Card = ({children, title, style, className, info, actions, setProps, ...others}) => {
+const Card = ({children, title, style, className, info, actions, setProps}) => {
     const actionClick = (actionPropName) => setProps(
-        {[actionPropName]: others[actionPropName] ? others[actionPropName] + 1 : 1}
+        {action_click: `${actionPropName} ${new Date()}`}
     )
     return (
         <div className={'card'}>
@@ -87,6 +87,10 @@ Card.propTypes = {
     actions: PropTypes.arrayOf(
         PropTypes.shape({displayName: PropTypes.string, actionPropName: PropTypes.string})
     ),
+    /**
+     * The action click value
+     */
+    action_click: PropTypes.string,
     /**
      * Dash function
      */

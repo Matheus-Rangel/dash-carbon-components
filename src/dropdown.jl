@@ -20,7 +20,7 @@ Those elements have the following types:
 - `label` (a list of or a singular dash component, string or number; required): Generic `label` that will be used as the textual representation of what
 this field is for
 - `ariaLabel` (String; optional): 'aria-label' of the ListBox component.
-- `value` (String; optional): In the case you want to control the dropdown selection entirely.
+- `value` (Bool | Real | String | Dict | Array; optional): In the case you want to control the dropdown selection entirely.
 - `light` (Bool; optional): `true` to use the light version.
 - `titleText` (String | a list of or a singular dash component, string or number; optional): Provide the title text that will be read by a screen reader when
 visiting this control

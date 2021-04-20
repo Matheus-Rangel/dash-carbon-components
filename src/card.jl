@@ -23,9 +23,10 @@ components in an app.
 Those elements have the following types:
   - `displayName` (String; optional)
   - `actionPropName` (String; optional)s
+- `action_click` (String; optional): The action click value
 """
 function card(; kwargs...)
-        available_props = Symbol[:children, :style, :id, :className, :title, :info, :actions]
+        available_props = Symbol[:children, :style, :id, :className, :title, :info, :actions, :action_click]
         wild_props = Symbol[]
         return Component("card", "Card", "dash_carbon_components", available_props, wild_props; kwargs...)
 end

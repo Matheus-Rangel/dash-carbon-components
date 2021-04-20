@@ -67,9 +67,9 @@ inputs_layout = dca.Grid(id='content', children=[
                 dca.MultiSelectFilterable(id='multiselect', titleText='Fruits',
                                           value=['apple'],
                                           options=[
-                                              {'label': 'Apple', 'value': 'apple'},
-                                              {'label': 'Orange', 'value': 'orange'},
-                                              {'label': 'Grape', 'value': 'grape'}
+                                              {'label': 'Apple', 'value': 0},
+                                              {'label': 'Orange', 'value': 1},
+                                              {'label': 'Grape', 'value': 2}
                                           ],
                                           label='Fruits'),
                 dca.Link(children='Select all')
@@ -116,9 +116,9 @@ inputs_layout = dca.Grid(id='content', children=[
                 html.Div([
                     dca.Dropdown(
                         options=[
-                            {'label': 'Apple', 'value': 'apple'},
-                            {'label': 'Orange', 'value': 'orange'},
-                            {'label': 'Grape', 'value': 'grape'}
+                            {'label': 'Apple', 'value': 0},
+                            {'label': 'Orange', 'value': 1},
+                            {'label': 'Grape', 'value': 2}
                         ],
                         id='dropdown',
                         label='Fruits')

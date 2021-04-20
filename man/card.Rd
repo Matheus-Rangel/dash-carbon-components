@@ -11,7 +11,7 @@ Card
 
 \usage{
 card(children=NULL, style=NULL, id=NULL, className=NULL,
-title=NULL, info=NULL, actions=NULL)
+title=NULL, info=NULL, actions=NULL, action_click=NULL)
 }
 
 \arguments{
@@ -33,6 +33,8 @@ components in an app.}
 those elements have the following types:
   - displayname (character; optional)
   - actionpropname (character; optional)s. Actions available on the side menu, button clicks will be outputted to the actionPropName prop of this card}
+
+\item{action_click}{Character. The action click value}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}
