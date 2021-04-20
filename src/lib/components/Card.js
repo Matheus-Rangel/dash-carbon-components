@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
  */
 const Card = ({children, title, style, className, info, actions, setProps}) => {
     const actionClick = (actionPropName) => setProps(
-        {action_click: `${actionPropName} ${new Date()}`}
+        {action_click: `${actionPropName} ${new Date().toISOString()}`}
     )
     return (
         <div className={'card'}>
