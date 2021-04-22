@@ -6,7 +6,7 @@ export dropdown
     dropdown(;kwargs...)
 
 A Dropdown component.
-
+Dropdown component
 Keyword arguments:
 - `disabled` (Bool; optional): Disable the control
 - `options` (optional): List of items. options has the following type: Array of String | lists containing elements 'label', 'value'.

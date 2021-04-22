@@ -182,7 +182,9 @@ Tabs.propTypes = {
      * component
      */
     ariaLabel: PropTypes.string,
-
+    /**
+     * Specify the inline style
+     */
     style: PropTypes.object,
     /**
      * Pass in a collection of <Tab> children to be rendered depending on the

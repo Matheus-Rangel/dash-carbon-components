@@ -6,7 +6,7 @@ export datepickerrange
     datepickerrange(;kwargs...)
 
 A DatePickerRange component.
-DatePickerRange
+DatePickerRange, the id of the DateInputs will be id + '-start' and id + '-end'
 Keyword arguments:
 - `id` (String; required): The ID of this component, used to identify dash components
 in callbacks. The ID needs to be unique across all of the

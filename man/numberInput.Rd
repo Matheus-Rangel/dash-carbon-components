@@ -6,7 +6,7 @@
 \title{NumberInput component}
 
 \description{
-
+NumberInput component
 }
 
 \usage{

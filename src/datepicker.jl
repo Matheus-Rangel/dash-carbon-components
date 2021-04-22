@@ -8,6 +8,9 @@ export datepicker
 A DatePicker component.
 DatePicker
 Keyword arguments:
+- `allowInput` (Bool; optional): flatpickr prop passthrough. Allows the user to enter a date directly
+into the input field
+- `className` (String; optional): The CSS class names.
 - `id` (String; required): The ID of this component, used to identify dash components
 in callbacks. The ID needs to be unique across all of the
 components in an app.
@@ -23,7 +26,7 @@ The full list of supported locales can be found here https://github.com/flatpick
 - `labelText` (String; required): Label text
 """
 function datepicker(; kwargs...)
-        available_props = Symbol[:id, :dateFormat, :light, :locale, :maxDate, :minDate, :short, :value, :placeholder, :labelText]
+        available_props = Symbol[:allowInput, :className, :id, :dateFormat, :light, :locale, :maxDate, :minDate, :short, :value, :placeholder, :labelText]
         wild_props = Symbol[]
         return Component("datepicker", "DatePicker", "dash_carbon_components", available_props, wild_props; kwargs...)
 end

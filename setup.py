@@ -20,4 +20,7 @@ setup(
     classifiers=[
         'Framework :: Dash',
     ],
+    project_urls={
+        'Source Code': 'https://github.com/Matheus-Rangel/dash-carbon-components'
+    }
 )

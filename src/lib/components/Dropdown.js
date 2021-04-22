@@ -2,6 +2,9 @@ import React from 'react'
 import {Dropdown as CarbonDropdown} from "carbon-components-react";
 import PropTypes from 'prop-types'
 
+/**
+ * Dropdown component
+ */
 const Dropdown = ({setProps, value, options, ...others}) => {
     const selectedItems = options.find(item=> 'value' in item ? value === item.value : value === item);
     return <CarbonDropdown

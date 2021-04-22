@@ -59,26 +59,13 @@ inputs_layout = dca.Grid(id='content', children=[
         dca.Column(columnSizes=['lg-3 md-5'], offsetSizes=['lg-2'], children=[
             dca.Card(title='Multiselect', children=[
                 dca.MultiSelect(id='multiselect', titleText='Fruits', options=['Apple', 'Orange', 'Grape'],
-                                label='Fruits')
-            ])
-        ]),
-        dca.Column(columnSizes=['lg-3 md-5'], children=[
-            dca.Card(title='Multiselect Filterable', children=[
-                dca.MultiSelectFilterable(id='multiselect', titleText='Fruits',
-                                          value=['apple'],
-                                          options=[
-                                              {'label': 'Apple', 'value': 0},
-                                              {'label': 'Orange', 'value': 1},
-                                              {'label': 'Grape', 'value': 2}
-                                          ],
-                                          label='Fruits'),
-                dca.Link(children='Select all')
+                                label='Fruits', filterable=True)
             ])
         ]),
         dca.Column(columnSizes=['lg-3 md-5'], children=[
             dca.Card(title='Number Input', children=[
                 html.Div([
-                    dca.NumberInput(id='numberinput', helperText='max', label='Number Input', value=50, min=0,
+                    dca.NumberInput(id='number-input', helperText='max', label='Number Input', value=50, min=0,
                                     max=100000000, step=10)
                 ]),
             ])
@@ -88,9 +75,9 @@ inputs_layout = dca.Grid(id='content', children=[
                 html.Div([
                     dca.RadioButtonGroup(legendText='Radio', value='opt2', id='Radio', name='Radio',
                                          radiosButtons=[
-                                             {'labelText': 'Option 1', 'value': 'opt1'},
-                                             {'labelText': 'Option 2', 'value': 'opt2'},
-                                             {'labelText': 'Option 3', 'value': 'opt3'},
+                                             {'label': 'Option 1', 'value': 'opt1'},
+                                             {'label': 'Option 2', 'value': 'opt2'},
+                                             {'label': 'Option 3', 'value': 'opt3'},
                                          ])
                 ]),
             ])

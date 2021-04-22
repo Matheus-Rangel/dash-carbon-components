@@ -5,11 +5,10 @@ import PropTypes from "prop-types";
 /**
  * DatePicker
  */
-const DatePicker = ({placeholder, labelText, id, dateFormat, light, locale, maxDate, minDate, short, value, setProps}) => {
+const DatePicker = ({placeholder, labelText, id, setProps, ...other}) => {
     return (
-        <DatePickerCarbon id={id} dateFormat={dateFormat} light={light} locale={locale} maxDate={maxDate}
-                          minDate={minDate} short={short} value={value} datePickerType='simple'
-                          onChange={({value}) => setProps({value})}>
+        <DatePickerCarbon id={id} datePickerType='simple'
+                          onChange={({value}) => setProps({value})} {...other}>
             <DatePickerInput id={id}
                              placeholder={placeholder}
                              labelText={labelText}/>)
@@ -17,6 +16,15 @@ const DatePicker = ({placeholder, labelText, id, dateFormat, light, locale, maxD
     )
 }
 DatePicker.propTypes = {
+    /**
+     * flatpickr prop passthrough. Allows the user to enter a date directly
+     * into the input field
+     */
+    allowInput: PropTypes.bool,
+     /**
+     * The CSS class names.
+     */
+    className: PropTypes.string,
     /**
      * The ID of this component, used to identify dash components
      * in callbacks. The ID needs to be unique across all of the

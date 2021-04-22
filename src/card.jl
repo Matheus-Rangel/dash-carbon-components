@@ -9,7 +9,7 @@ export card
 
 
 A Card component.
-Card
+Card to display content
 Keyword arguments:
 - `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional): The children of the element
 - `style` (Dict; optional): The inline styles

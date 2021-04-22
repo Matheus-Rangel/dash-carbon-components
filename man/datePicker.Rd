@@ -10,12 +10,17 @@ DatePicker
 }
 
 \usage{
-datePicker(id=NULL, dateFormat=NULL, light=NULL, locale=NULL,
-maxDate=NULL, minDate=NULL, short=NULL, value=NULL,
-placeholder=NULL, labelText=NULL)
+datePicker(allowInput=NULL, className=NULL, id=NULL, dateFormat=NULL,
+light=NULL, locale=NULL, maxDate=NULL, minDate=NULL,
+short=NULL, value=NULL, placeholder=NULL, labelText=NULL)
 }
 
 \arguments{
+\item{allowInput}{Logical. flatpickr prop passthrough. Allows the user to enter a date directly
+into the input field}
+
+\item{className}{Character. The CSS class names.}
+
 \item{id}{Character. The ID of this component, used to identify dash components
 in callbacks. The ID needs to be unique across all of the
 components in an app.}

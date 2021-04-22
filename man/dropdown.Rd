@@ -6,7 +6,7 @@
 \title{Dropdown component}
 
 \description{
-
+Dropdown component
 }
 
 \usage{

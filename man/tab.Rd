@@ -6,7 +6,7 @@
 \title{Tab component}
 
 \description{
-
+Tab component
 }
 
 \usage{

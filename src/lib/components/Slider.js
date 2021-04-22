@@ -1,36 +1,22 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {Slider as CarbonSlider} from 'carbon-components-react'
 
 /**
  * Slider
  */
-export default class Slider extends Component {
-    render() {
-        const {
-            id, name, inputType, ariaLabelInput, disabled, light, hideTextInput, min, max, value, step,
-            stepMultiplier, labelText, setProps
-        } = this.props;
-        return (
-            <CarbonSlider
-                id={id}
-                labelText={labelText}
-                name={name}
-                inputType={inputType}
-                ariaLabelInput={ariaLabelInput}
-                disable={disabled.toString()}
-                light={light}
-                hideTextInput={hideTextInput}
-                min={min}
-                max={max}
-                value={value}
-                step={step}
-                stepMultiplier={stepMultiplier}
-                onRelease={({value}) => setProps({value})}
-            />
-        );
-    }
-};
+const Slider = ({
+                    id, disabled, setProps, ...other
+                }) => {
+    return (
+        <CarbonSlider
+            id={id}
+            disable={disabled.toString()}
+            onRelease={({value}) => setProps({value})}
+            {...other}
+        />
+    );
+}
 Slider.propTypes = {
     /**
      * The ID of this component, used to identify dash components
@@ -73,3 +59,4 @@ Slider.defaultProps = {
     inputType: 'number',
     stepMultiplier: 5,
 }
+export default Slider

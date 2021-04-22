@@ -6,7 +6,7 @@
 \title{DatePickerRange component}
 
 \description{
-DatePickerRange
+DatePickerRange, the id of the DateInputs will be id + '-start' and id + '-end'
 }
 
 \usage{

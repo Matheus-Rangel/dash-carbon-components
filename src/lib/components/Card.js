@@ -4,7 +4,7 @@ import {OverflowMenu, OverflowMenuItem, Tooltip} from 'carbon-components-react';
 import PropTypes from 'prop-types'
 
 /**
- * Card
+ * Card to display content
  */
 const Card = ({children, title, style, className, info, actions, setProps}) => {
     const actionClick = (actionPropName) => setProps(

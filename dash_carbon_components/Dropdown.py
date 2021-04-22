@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Dropdown(Component):
     """A Dropdown component.
-
+Dropdown component
 
 Keyword arguments:
 - disabled (boolean; optional): Disable the control

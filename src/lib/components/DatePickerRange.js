@@ -1,53 +1,38 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {DatePicker as DatePickerCarbon, DatePickerInput} from "carbon-components-react";
 import PropTypes from "prop-types";
 
 /**
- * DatePickerRange
+ * DatePickerRange, the id of the DateInputs will be id + '-start' and id + '-end'
  */
-export default class DatePickerRange extends Component {
-    render() {
-        const {
-            id,
-            dateFormat,
-            light,
-            locale,
-            maxDate,
-            minDate,
-            short,
-            value,
-            startLabel,
-            endLabel,
-            placeholder,
-            setProps
-        } = this.props
-        return (
-            <DatePickerCarbon id={id}
-                              datePickerType="range"
-                              dateFormat={dateFormat}
-                              light={light}
-                              locale={locale}
-                              maxDate={maxDate}
-                              minDate={minDate}
-                              short={short}
-                              value={value}
-                              onChange={(change) => {
-                                  if(change.length === 2){
-                                      setProps({value: change.map(date => date.toISOString())})
-                                  }
-                              }}
-            >
-                <DatePickerInput
-                    id={id + '-start'}
-                    placeholder={placeholder}
-                    labelText={startLabel}/>
-                <DatePickerInput
-                    id={id + '-end'}
-                    placeholder={placeholder}
-                    labelText={endLabel}/>
-            </DatePickerCarbon>
-        )
-    }
+const DatePickerRange = ({
+    id,
+    startLabel,
+    endLabel,
+    placeholder,
+    setProps,
+    ...other
+}) => {
+    return (
+        <DatePickerCarbon id={id}
+                          datePickerType="range"
+                          {...other}
+                          onChange={(change) => {
+                              if (change.length === 2) {
+                                  setProps({value: change.map(date => date.toISOString())})
+                              }
+                          }}
+        >
+            <DatePickerInput
+                id={id + '-start'}
+                placeholder={placeholder}
+                labelText={startLabel}/>
+            <DatePickerInput
+                id={id + '-end'}
+                placeholder={placeholder}
+                labelText={endLabel}/>
+        </DatePickerCarbon>
+    )
 }
 DatePickerRange.propTypes = {
     /**
@@ -100,3 +85,4 @@ DatePickerRange.propTypes = {
     /** Prop passed by Dash */
     setProps: PropTypes.func,
 }
+export default DatePickerRange

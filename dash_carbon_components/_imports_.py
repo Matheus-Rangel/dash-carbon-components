@@ -8,7 +8,6 @@ from .Dropdown import Dropdown
 from .Grid import Grid
 from .Link import Link
 from .MultiSelect import MultiSelect
-from .MultiSelectFilterable import MultiSelectFilterable
 from .NumberInput import NumberInput
 from .RadioButtonGroup import RadioButtonGroup
 from .Row import Row
@@ -28,7 +27,6 @@ __all__ = [
     "Grid",
     "Link",
     "MultiSelect",
-    "MultiSelectFilterable",
     "NumberInput",
     "RadioButtonGroup",
     "Row",

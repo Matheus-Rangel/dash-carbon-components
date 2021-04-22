@@ -9,6 +9,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import TabItem from "../internal/TabItem";
 
+/**
+ * Tab component
+ */
 class Tab extends React.Component {
     render() {
         return (

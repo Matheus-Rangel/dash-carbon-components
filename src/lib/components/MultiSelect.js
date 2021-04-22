@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {MultiSelect as MultiSelectCarbon} from 'carbon-components-react';
 import PropTypes from 'prop-types';
 
@@ -6,39 +6,19 @@ import PropTypes from 'prop-types';
  * MultiSelect
  */
 const MultiSelect = ({
-                         disabled, locale, value, light, selectionFeedback, direction, id, invalid,
-                         invalidText, options, label, setProps, size, titleText, style
+                         filterable, value,  options,setProps, ...others
                      }) => {
-    const [currentItems, setCurrentItems] = useState([]);
-    const [menuOpen, setMenuOpen] = useState(false);
+    const multiSelectComponent = filterable ? MultiSelectCarbon.Filterable : MultiSelectCarbon
     const initialSelectedItems = options.filter(item=> item.value ?  value.includes(item.value) : value.includes(item))
-    useEffect(() => {
-        setCurrentItems(initialSelectedItems)
-    }, [value]);
     const updateProps = (value) => {
         const values = value.map(item => 'value' in item ? item.value : item)
         setProps({value: values})
     }
     return (
-        <MultiSelectCarbon key={initialSelectedItems}
-            disabled={disabled} locale={locale} initialSelectedItems={initialSelectedItems} light={light}
-            selectionFeedback={selectionFeedback} direction={direction} id={id} invalid={invalid}
-            invalidText={invalidText} items={options} label={label} size={size} style={style}
-            titleText={titleText} itemToString={(item) => item.label ? item.label : item}
-            onChange={({selectedItems}) => {
-                if (!menuOpen) {
-                    updateProps(selectedItems)
-                } else {
-                    setCurrentItems(selectedItems)
-                }
-            }}
-            onMenuChange={(menuChange) => {
-                if (!menuChange) {
-                    updateProps(currentItems)
-                } else {
-                    setMenuOpen(menuChange)
-                }
-            }}
+        <multiSelectComponent initialSelectedItems={initialSelectedItems}
+                              itemToString={(item) => item.label ? item.label : item}
+                              onChange={({selectedItems}) => {updateProps(selectedItems)}}
+                              {...others}
         />
     )
 };
@@ -47,6 +27,9 @@ MultiSelect.propTypes = {
      * Disable the control
      */
     disabled: PropTypes.bool,
+    /**
+     * Inline styles
+     */
     style: PropTypes.object,
     /**
      * Specify the locale of the control.
@@ -108,8 +91,13 @@ MultiSelect.propTypes = {
     value: PropTypes.arrayOf(PropTypes.any),
     /** Prop passed by Dash */
     setProps: PropTypes.func,
+    /**
+     * Specify if the Multiselect should be Filterable, default true
+     */
+    filterable: PropTypes.bool
 }
 MultiSelect.defaultProps = {
-    value: []
+    value: [],
+    filterable: true
 }
 export default MultiSelect

@@ -9,7 +9,7 @@ MultiSelect
 
 Keyword arguments:
 - disabled (boolean; optional): Disable the control
-- style (dict; optional)
+- style (dict; optional): Inline styles
 - locale (string; optional): Specify the locale of the control.
 Used for the default compareItems used for sorting the list of items in the control.
 - light (boolean; optional): true to use the light version.
@@ -30,14 +30,15 @@ Those keys have the following types:
 - label (string; optional): Generic label that will be used as the textual representation of what this field is for
 - size (a value equal to: 'sm', 'lg', 'xl'; optional): Specify the size of the ListBox. Currently supports either sm, lg or xl as an option.
 - titleText (string; optional): Provide text to be used in a <label> element that is tied to the multiselect via ARIA attributes.
-- value (list of boolean | number | string | dict | lists; optional): The list of the selected items"""
+- value (list of boolean | number | string | dict | lists; optional): The list of the selected items
+- filterable (boolean; default True): Specify if the Multiselect should be Filterable, default true"""
     @_explicitize_args
-    def __init__(self, disabled=Component.UNDEFINED, style=Component.UNDEFINED, locale=Component.UNDEFINED, light=Component.UNDEFINED, selectionFeedback=Component.UNDEFINED, direction=Component.UNDEFINED, id=Component.REQUIRED, invalid=Component.UNDEFINED, invalidText=Component.UNDEFINED, options=Component.REQUIRED, label=Component.UNDEFINED, size=Component.UNDEFINED, titleText=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['disabled', 'style', 'locale', 'light', 'selectionFeedback', 'direction', 'id', 'invalid', 'invalidText', 'options', 'label', 'size', 'titleText', 'value']
+    def __init__(self, disabled=Component.UNDEFINED, style=Component.UNDEFINED, locale=Component.UNDEFINED, light=Component.UNDEFINED, selectionFeedback=Component.UNDEFINED, direction=Component.UNDEFINED, id=Component.REQUIRED, invalid=Component.UNDEFINED, invalidText=Component.UNDEFINED, options=Component.REQUIRED, label=Component.UNDEFINED, size=Component.UNDEFINED, titleText=Component.UNDEFINED, value=Component.UNDEFINED, filterable=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['disabled', 'style', 'locale', 'light', 'selectionFeedback', 'direction', 'id', 'invalid', 'invalidText', 'options', 'label', 'size', 'titleText', 'value', 'filterable']
         self._type = 'MultiSelect'
         self._namespace = 'dash_carbon_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['disabled', 'style', 'locale', 'light', 'selectionFeedback', 'direction', 'id', 'invalid', 'invalidText', 'options', 'label', 'size', 'titleText', 'value']
+        self.available_properties = ['disabled', 'style', 'locale', 'light', 'selectionFeedback', 'direction', 'id', 'invalid', 'invalidText', 'options', 'label', 'size', 'titleText', 'value', 'filterable']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

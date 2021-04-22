@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class DatePickerRange(Component):
     """A DatePickerRange component.
-DatePickerRange
+DatePickerRange, the id of the DateInputs will be id + '-start' and id + '-end'
 
 Keyword arguments:
 - id (string; required): The ID of this component, used to identify dash components

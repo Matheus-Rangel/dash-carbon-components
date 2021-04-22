@@ -8,6 +8,9 @@ class DatePicker(Component):
 DatePicker
 
 Keyword arguments:
+- allowInput (boolean; optional): flatpickr prop passthrough. Allows the user to enter a date directly
+into the input field
+- className (string; optional): The CSS class names.
 - id (string; required): The ID of this component, used to identify dash components
 in callbacks. The ID needs to be unique across all of the
 components in an app.
@@ -22,12 +25,12 @@ The full list of supported locales can be found here https://github.com/flatpick
 - placeholder (string; required): Placeholder
 - labelText (string; required): Label text"""
     @_explicitize_args
-    def __init__(self, id=Component.REQUIRED, dateFormat=Component.UNDEFINED, light=Component.UNDEFINED, locale=Component.UNDEFINED, maxDate=Component.UNDEFINED, minDate=Component.UNDEFINED, short=Component.UNDEFINED, value=Component.UNDEFINED, placeholder=Component.REQUIRED, labelText=Component.REQUIRED, **kwargs):
-        self._prop_names = ['id', 'dateFormat', 'light', 'locale', 'maxDate', 'minDate', 'short', 'value', 'placeholder', 'labelText']
+    def __init__(self, allowInput=Component.UNDEFINED, className=Component.UNDEFINED, id=Component.REQUIRED, dateFormat=Component.UNDEFINED, light=Component.UNDEFINED, locale=Component.UNDEFINED, maxDate=Component.UNDEFINED, minDate=Component.UNDEFINED, short=Component.UNDEFINED, value=Component.UNDEFINED, placeholder=Component.REQUIRED, labelText=Component.REQUIRED, **kwargs):
+        self._prop_names = ['allowInput', 'className', 'id', 'dateFormat', 'light', 'locale', 'maxDate', 'minDate', 'short', 'value', 'placeholder', 'labelText']
         self._type = 'DatePicker'
         self._namespace = 'dash_carbon_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'dateFormat', 'light', 'locale', 'maxDate', 'minDate', 'short', 'value', 'placeholder', 'labelText']
+        self.available_properties = ['allowInput', 'className', 'id', 'dateFormat', 'light', 'locale', 'maxDate', 'minDate', 'short', 'value', 'placeholder', 'labelText']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

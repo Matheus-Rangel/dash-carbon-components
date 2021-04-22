@@ -1,7 +1,7 @@
 {
-  "name": "dash_carbon_components",
-  "version": "0.0.1",
-  "description": "Project Description",
+  "name": "dash-carbon-components",
+  "version": "0.1.0",
+  "description": "Dash Components using IBM's Carbon Design System https://github.com/carbon-design-system",
   "main": "build/index.js",
   "scripts": {
     "start": "webpack-serve --config ./webpack.serve.config.js --open",
@@ -14,7 +14,7 @@
     "build:activated": "npm run build:js && npm run build:backends-activated"
   },
   "author": "Matheus Rangel <matheus.rangel@ibm.com>",
-  "license": "",
+  "license": "Apache License Version 2.0",
   "dependencies": {
     "@carbon/icons-react": "^10.26.0",
     "carbon-components": "^10.29.0",

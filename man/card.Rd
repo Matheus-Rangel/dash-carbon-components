@@ -6,7 +6,7 @@
 \title{Card component}
 
 \description{
-Card
+Card to display content
 }
 
 \usage{

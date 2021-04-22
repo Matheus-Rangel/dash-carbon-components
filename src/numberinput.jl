@@ -6,7 +6,7 @@ export numberinput
     numberinput(;kwargs...)
 
 A NumberInput component.
-
+NumberInput component
 Keyword arguments:
 - `allowEmpty` (Bool; optional): `true` to allow empty string.
 - `style` (Dict; optional): style of the input

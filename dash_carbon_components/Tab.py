@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Tab(Component):
     """A Tab component.
-
+Tab component
 
 Keyword arguments:
 - children (list of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional): Tab content

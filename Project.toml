@@ -1,9 +1,9 @@
 
-name = "DashCarbonComponents"
+name = "Dash Carbon Components"
 uuid = "1b08a953-4be3-4667-9a23-0b68a70f71cc"
 authors = ["Matheus Rangel <matheus.rangel@ibm.com>"]
-version = "0.0.1"
-
+version = "0.1"
+repo-url = "https://github.com/Matheus-Rangel/dash-carbon-components"
 [deps]
 Dash = "1b08a953-4be3-4667-9a23-3db579824955"
 

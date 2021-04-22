@@ -12,7 +12,7 @@ Keyword arguments:
 currently selected tab
 - ariaLabel (string; default 'listbox'): Specify the text to be read by screen-readers when visiting the <Tabs>
 component
-- style (dict; optional)
+- style (dict; optional): Specify the inline style
 - className (string; optional): Provide a className that is applied to the root <nav> component for the
 <Tabs>
 - hidden (boolean; optional): Specify whether the Tab content is hidden

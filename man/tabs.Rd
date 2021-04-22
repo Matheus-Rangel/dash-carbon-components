@@ -24,7 +24,7 @@ currently selected tab}
 \item{ariaLabel}{Character. Specify the text to be read by screen-readers when visiting the <Tabs>
 component}
 
-\item{style}{Named list. }
+\item{style}{Named list. Specify the inline style}
 
 \item{className}{Character. Provide a className that is applied to the root <nav> component for the
 <Tabs>}

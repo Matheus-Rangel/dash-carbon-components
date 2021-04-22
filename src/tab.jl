@@ -9,7 +9,7 @@ export tab
 
 
 A Tab component.
-
+Tab component
 Keyword arguments:
 - `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional): Tab content
 - `className` (String; optional): Specify an optional className to be added to your Tab

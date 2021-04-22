@@ -15,7 +15,7 @@ Keyword arguments:
 currently selected tab
 - `ariaLabel` (String; optional): Specify the text to be read by screen-readers when visiting the <Tabs>
 component
-- `style` (Dict; optional)
+- `style` (Dict; optional): Specify the inline style
 - `className` (String; optional): Provide a className that is applied to the root <nav> component for the
 <Tabs>
 - `hidden` (Bool; optional): Specify whether the Tab content is hidden

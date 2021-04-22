@@ -9,7 +9,7 @@ A MultiSelect component.
 MultiSelect
 Keyword arguments:
 - `disabled` (Bool; optional): Disable the control
-- `style` (Dict; optional)
+- `style` (Dict; optional): Inline styles
 - `locale` (String; optional): Specify the locale of the control.
 Used for the default compareItems used for sorting the list of items in the control.
 - `light` (Bool; optional): true to use the light version.
@@ -31,9 +31,10 @@ Those elements have the following types:
 - `size` (a value equal to: 'sm', 'lg', 'xl'; optional): Specify the size of the ListBox. Currently supports either sm, lg or xl as an option.
 - `titleText` (String; optional): Provide text to be used in a <label> element that is tied to the multiselect via ARIA attributes.
 - `value` (Array of Bool | Real | String | Dict | Arrays; optional): The list of the selected items
+- `filterable` (Bool; optional): Specify if the Multiselect should be Filterable, default true
 """
 function multiselect(; kwargs...)
-        available_props = Symbol[:disabled, :style, :locale, :light, :selectionFeedback, :direction, :id, :invalid, :invalidText, :options, :label, :size, :titleText, :value]
+        available_props = Symbol[:disabled, :style, :locale, :light, :selectionFeedback, :direction, :id, :invalid, :invalidText, :options, :label, :size, :titleText, :value, :filterable]
         wild_props = Symbol[]
         return Component("multiselect", "MultiSelect", "dash_carbon_components", available_props, wild_props; kwargs...)
 end

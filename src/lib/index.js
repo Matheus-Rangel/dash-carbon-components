@@ -12,7 +12,6 @@ import DatePicker from './components/DatePicker';
 import DatePickerRange from './components/DatePickerRange';
 import Link from './components/Link'
 import MultiSelect from './components/MultiSelect';
-import MultiSelectFilterable from './components/MultiSelectFilterable';
 import NumberInput from  './components/NumberInput';
 import RadioButtonGroup from "./components/RadioButtonGroup";
 import Tabs from './components/Tabs';
@@ -30,7 +29,6 @@ export {
     Grid,
     Link,
     MultiSelect,
-    MultiSelectFilterable,
     NumberInput,
     RadioButtonGroup,
     Row,

@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class NumberInput(Component):
     """A NumberInput component.
-
+NumberInput component
 
 Keyword arguments:
 - allowEmpty (boolean; default False): `true` to allow empty string.

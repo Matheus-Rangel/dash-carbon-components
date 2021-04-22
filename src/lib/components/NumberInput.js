@@ -2,31 +2,14 @@ import React, {useRef} from 'react';
 import {NumberInput as NumberInputCarbon} from "carbon-components-react";
 import PropTypes from 'prop-types';
 
-const NumberInput = ({
-                         allowEmpty,
-                         ariaLabel,
-                         className,
-                         defaultValue,
-                         disabled,
-                         helperText,
-                         hideLabel,
-                         iconDescription,
-                         id,
-                         invalid,
-                         invalidText,
-                         label,
-                         light,
-                         max,
-                         min,
-                         readOnly,
-                         setProps,
-                         size,
-                         step,
-                         style,
-                         value,
-                         warn,
-                         warnText,
-                     }) => {
+/**
+ * NumberInput component
+ */
+const NumberInput =
+    ({
+         setProps,
+         ...other
+    }) => {
     const input = useRef(null);
     const setValue = () => {
         if (input.current.value) {
@@ -37,29 +20,8 @@ const NumberInput = ({
     }
     return <NumberInputCarbon
         ref={input}
-        allowEmpty={allowEmpty}
-        ariaLabel={ariaLabel}
-        className={className}
-        defaultValue={defaultValue}
-        disabled={disabled}
-        helperText={helperText}
-        hideLabel={hideLabel}
-        iconDescription={iconDescription}
-        id={id}
-        invalid={invalid}
-        invalidText={invalidText}
-        label={label}
-        light={light}
-        max={max}
-        min={min}
-        readOnly={readOnly}
-        size={size}
-        step={step}
-        style={style}
-        value={value}
-        warn={warn}
-        warnText={warnText}
         onChange={setValue}
+        {...other}
     />
 }
 NumberInput.propTypes = {
