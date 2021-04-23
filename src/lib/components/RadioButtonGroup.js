@@ -6,13 +6,13 @@ import PropTypes from 'prop-types';
  * Radio Group Component
  */
 const RadioButtonGroup = (
-    {legendText, value, setProps, radiosButtons, ...others}) => {
+    {legendText, value, setProps, id, radiosButtons, ...others}) => {
     const buttons = radiosButtons.map(({label, value, id}) => (
         <RadioButton key={value} labelText={label} id={id} value={value}/>
     ));
     console.log(legendText)
     return (
-        <CarbonRadioButtonGroup {...others} valueSelected={value} onChange={(value) => setProps({value})}>
+        <CarbonRadioButtonGroup id={id} name={id} {...others} valueSelected={value} onChange={(value) => setProps({value})}>
             {buttons}
         </CarbonRadioButtonGroup>
     );
@@ -24,10 +24,6 @@ RadioButtonGroup.propTypes = {
      * exposing to the user
      */
     legendText: PropTypes.node,
-    /**
-     * Specify the name of the underlying `<input>` nodes
-     */
-    name: PropTypes.string.isRequired,
     /**
      * The radios buttons inside this group
      */

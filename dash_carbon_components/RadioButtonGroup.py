@@ -10,7 +10,6 @@ Radio Group Component
 Keyword arguments:
 - legendText (a list of or a singular dash component, string or number; optional): Provide a legend to the RadioButtonGroup input that you are
 exposing to the user
-- name (string; required): Specify the name of the underlying `<input>` nodes
 - radiosButtons (dict; optional): The radios buttons inside this group. radiosButtons has the following type: list of dicts containing keys 'label', 'value', 'id'.
 Those keys have the following types:
   - label (string; optional)
@@ -23,12 +22,12 @@ Those keys have the following types:
 - disabled (boolean; optional): Specify whether the group is disabled
 - className (string; optional): Provide an optional className to be applied to the container node"""
     @_explicitize_args
-    def __init__(self, legendText=Component.UNDEFINED, name=Component.REQUIRED, radiosButtons=Component.UNDEFINED, id=Component.UNDEFINED, value=Component.UNDEFINED, labelPosition=Component.UNDEFINED, orientation=Component.UNDEFINED, disabled=Component.UNDEFINED, className=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['legendText', 'name', 'radiosButtons', 'id', 'value', 'labelPosition', 'orientation', 'disabled', 'className']
+    def __init__(self, legendText=Component.UNDEFINED, radiosButtons=Component.UNDEFINED, id=Component.UNDEFINED, value=Component.UNDEFINED, labelPosition=Component.UNDEFINED, orientation=Component.UNDEFINED, disabled=Component.UNDEFINED, className=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['legendText', 'radiosButtons', 'id', 'value', 'labelPosition', 'orientation', 'disabled', 'className']
         self._type = 'RadioButtonGroup'
         self._namespace = 'dash_carbon_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['legendText', 'name', 'radiosButtons', 'id', 'value', 'labelPosition', 'orientation', 'disabled', 'className']
+        self.available_properties = ['legendText', 'radiosButtons', 'id', 'value', 'labelPosition', 'orientation', 'disabled', 'className']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
@@ -36,7 +35,7 @@ Those keys have the following types:
         _locals.update(kwargs)  # For wildcard attrs
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
 
-        for k in ['name']:
+        for k in []:
             if k not in args:
                 raise TypeError(
                     'Required argument `' + k + '` was not specified.')

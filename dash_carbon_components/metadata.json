@@ -1459,13 +1459,6 @@
         "required": false,
         "description": "Provide a legend to the RadioButtonGroup input that you are\nexposing to the user"
       },
-      "name": {
-        "type": {
-          "name": "string"
-        },
-        "required": true,
-        "description": "Specify the name of the underlying `<input>` nodes"
-      },
       "radiosButtons": {
         "type": {
           "name": "arrayOf",

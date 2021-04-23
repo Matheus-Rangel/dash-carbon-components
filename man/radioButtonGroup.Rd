@@ -10,16 +10,14 @@ Radio Group Component
 }
 
 \usage{
-radioButtonGroup(legendText=NULL, name=NULL, radiosButtons=NULL, id=NULL,
-value=NULL, labelPosition=NULL, orientation=NULL,
-disabled=NULL, className=NULL)
+radioButtonGroup(legendText=NULL, radiosButtons=NULL, id=NULL, value=NULL,
+labelPosition=NULL, orientation=NULL, disabled=NULL,
+className=NULL)
 }
 
 \arguments{
 \item{legendText}{A list of or a singular dash component, string or number. Provide a legend to the RadioButtonGroup input that you are
 exposing to the user}
-
-\item{name}{Character. Specify the name of the underlying `<input>` nodes}
 
 \item{radiosButtons}{List of lists containing elements 'label', 'value', 'id'.
 those elements have the following types:

@@ -73,7 +73,7 @@ inputs_layout = dca.Grid(id='content', children=[
         dca.Column(columnSizes=['lg-4 md-5'], offsetSizes=['lg-2'], children=[
             dca.Card(title='Radio Group', children=[
                 html.Div([
-                    dca.RadioButtonGroup(legendText='Radio', value='opt2', id='Radio', name='Radio',
+                    dca.RadioButtonGroup(legendText='Radio', value='opt2', id='Radio',
                                          radiosButtons=[
                                              {'label': 'Option 1', 'value': 'opt1'},
                                              {'label': 'Option 2', 'value': 'opt2'},
