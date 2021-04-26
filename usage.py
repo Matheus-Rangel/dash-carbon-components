@@ -59,7 +59,7 @@ inputs_layout = dca.Grid(id='content', children=[
         dca.Column(columnSizes=['lg-3 md-5'], offsetSizes=['lg-2'], children=[
             dca.Card(title='Multiselect', children=[
                 dca.MultiSelect(id='multiselect', titleText='Fruits', options=['Apple', 'Orange', 'Grape'],
-                                label='Fruits', filterable=True)
+                                label='Fruits')
             ])
         ]),
         dca.Column(columnSizes=['lg-3 md-5'], children=[

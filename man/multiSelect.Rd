@@ -19,7 +19,7 @@ size=NULL, titleText=NULL, value=NULL, filterable=NULL)
 \arguments{
 \item{disabled}{Logical. Disable the control}
 
-\item{style}{Named list. Inline styles}
+\item{style}{Named list. }
 
 \item{locale}{Character. Specify the locale of the control.
 Used for the default compareItems used for sorting the list of items in the control.}
@@ -54,7 +54,7 @@ those elements have the following types:
 
 \item{value}{List of logical | numeric | character | named list | unnamed lists. The list of the selected items}
 
-\item{filterable}{Logical. Specify if the Multiselect should be Filterable, default true}
+\item{filterable}{Logical. Specify if this component should be filterable}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

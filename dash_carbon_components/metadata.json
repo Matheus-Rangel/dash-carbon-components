@@ -1037,7 +1037,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Inline styles"
+        "description": ""
       },
       "locale": {
         "type": {
@@ -1197,7 +1197,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Specify if the Multiselect should be Filterable, default true",
+        "description": "Specify if this component should be filterable",
         "defaultValue": {
           "value": "true",
           "computed": false

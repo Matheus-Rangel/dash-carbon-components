@@ -1,35 +1,52 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {MultiSelect as MultiSelectCarbon} from 'carbon-components-react';
 import PropTypes from 'prop-types';
 
 /**
  * MultiSelect
  */
-const MultiSelect = ({
-                         filterable, value,  options,setProps, ...others
+const MultiSelect = ({value, options, setProps,  filterable, ...others
                      }) => {
-    const multiSelectComponent = filterable ? MultiSelectCarbon.Filterable : MultiSelectCarbon
+    const [currentItems, setCurrentItems] = useState([]);
+    const [menuOpen, setMenuOpen] = useState(false);
     const initialSelectedItems = options.filter(item=> item.value ?  value.includes(item.value) : value.includes(item))
+    useEffect(() => {
+        setCurrentItems(initialSelectedItems)
+    }, [value]);
     const updateProps = (value) => {
-        const values = value.map(item => 'value' in item ? item.value : item)
+        const values = value.map(item => Object.prototype.hasOwnProperty.call(item, 'value') ? item.value : item)
         setProps({value: values})
     }
-    return (
-        <multiSelectComponent initialSelectedItems={initialSelectedItems}
-                              itemToString={(item) => item.label ? item.label : item}
-                              onChange={({selectedItems}) => {updateProps(selectedItems)}}
-                              {...others}
-        />
-    )
+    const props = {
+        key: initialSelectedItems,
+        initialSelectedItems,
+        items: options,
+        itemToString: (item) => item.label ? item.label : item,
+        onChange: ({selectedItems}) => {
+                if (!menuOpen) {
+                    updateProps(selectedItems)
+                } else {
+                    setCurrentItems(selectedItems)
+                }
+            },
+        onMenuChange:(menuChange) => {
+            if (!menuChange) {
+                updateProps(currentItems)
+            } else {
+                setMenuOpen(menuChange)
+            }
+        },
+        ...others
+    }
+    return filterable ?
+        <MultiSelectCarbon.Filterable placeholder={props.label} {...props}/> :
+        <MultiSelectCarbon {...props}/>
 };
 MultiSelect.propTypes = {
     /**
      * Disable the control
      */
     disabled: PropTypes.bool,
-    /**
-     * Inline styles
-     */
     style: PropTypes.object,
     /**
      * Specify the locale of the control.
@@ -92,9 +109,9 @@ MultiSelect.propTypes = {
     /** Prop passed by Dash */
     setProps: PropTypes.func,
     /**
-     * Specify if the Multiselect should be Filterable, default true
+     * Specify if this component should be filterable
      */
-    filterable: PropTypes.bool
+    filterable:PropTypes.bool,
 }
 MultiSelect.defaultProps = {
     value: [],

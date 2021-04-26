@@ -1,6 +1,6 @@
 {
   "name": "dash-carbon-components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Dash Components using IBM's Carbon Design System https://github.com/carbon-design-system",
   "main": "build/index.js",
   "scripts": {

@@ -9,7 +9,7 @@ MultiSelect
 
 Keyword arguments:
 - disabled (boolean; optional): Disable the control
-- style (dict; optional): Inline styles
+- style (dict; optional)
 - locale (string; optional): Specify the locale of the control.
 Used for the default compareItems used for sorting the list of items in the control.
 - light (boolean; optional): true to use the light version.
@@ -31,7 +31,7 @@ Those keys have the following types:
 - size (a value equal to: 'sm', 'lg', 'xl'; optional): Specify the size of the ListBox. Currently supports either sm, lg or xl as an option.
 - titleText (string; optional): Provide text to be used in a <label> element that is tied to the multiselect via ARIA attributes.
 - value (list of boolean | number | string | dict | lists; optional): The list of the selected items
-- filterable (boolean; default True): Specify if the Multiselect should be Filterable, default true"""
+- filterable (boolean; default True): Specify if this component should be filterable"""
     @_explicitize_args
     def __init__(self, disabled=Component.UNDEFINED, style=Component.UNDEFINED, locale=Component.UNDEFINED, light=Component.UNDEFINED, selectionFeedback=Component.UNDEFINED, direction=Component.UNDEFINED, id=Component.REQUIRED, invalid=Component.UNDEFINED, invalidText=Component.UNDEFINED, options=Component.REQUIRED, label=Component.UNDEFINED, size=Component.UNDEFINED, titleText=Component.UNDEFINED, value=Component.UNDEFINED, filterable=Component.UNDEFINED, **kwargs):
         self._prop_names = ['disabled', 'style', 'locale', 'light', 'selectionFeedback', 'direction', 'id', 'invalid', 'invalidText', 'options', 'label', 'size', 'titleText', 'value', 'filterable']
