@@ -6,11 +6,10 @@ import PropTypes from 'prop-types';
  * Radio Group Component
  */
 const RadioButtonGroup = (
-    {legendText, value, setProps, id, radiosButtons, ...others}) => {
+    {value, setProps, id, radiosButtons, ...others}) => {
     const buttons = radiosButtons.map(({label, value, id}) => (
         <RadioButton key={value} labelText={label} id={id} value={value}/>
     ));
-    console.log(legendText)
     return (
         <CarbonRadioButtonGroup id={id} name={id} {...others} valueSelected={value} onChange={(value) => setProps({value})}>
             {buttons}
