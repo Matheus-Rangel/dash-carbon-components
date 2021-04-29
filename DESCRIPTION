@@ -1,6 +1,6 @@
 Package: dashCarbonComponents
 Title: Dash Components using IBM's Carbon Design System https://github.com/carbon-design-system
-Version: 0.1.2
+Version: 0.1.3
 Description: Dash Components using IBM's Carbon Design System https://github.com/carbon-design-system
 Depends: R (>= 3.0.2)
 Imports: 
