@@ -9,7 +9,7 @@ MultiSelect
 
 Keyword arguments:
 - disabled (boolean; optional): Disable the control
-- style (dict; optional)
+- style (dict; optional): Inline style
 - locale (string; optional): Specify the locale of the control.
 Used for the default compareItems used for sorting the list of items in the control.
 - light (boolean; optional): true to use the light version.

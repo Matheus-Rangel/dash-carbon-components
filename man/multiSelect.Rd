@@ -19,7 +19,7 @@ size=NULL, titleText=NULL, value=NULL, filterable=NULL)
 \arguments{
 \item{disabled}{Logical. Disable the control}
 
-\item{style}{Named list. }
+\item{style}{Named list. Inline style}
 
 \item{locale}{Character. Specify the locale of the control.
 Used for the default compareItems used for sorting the list of items in the control.}

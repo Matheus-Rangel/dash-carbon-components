@@ -26,9 +26,9 @@ nav_layout = html.Div([
     )
 ])
 
-inputs_layout = dca.Grid(id='content', children=[
-    dca.Row(children=[
-        dca.Column(columnSizes=['lg-4 md-5'], offsetSizes=['lg-2'], children=[
+inputs_layout = dca.Grid(id='content', className='bx--grid--full-width bx--grid--narrow', children=[
+    dca.Row(className='bx--row-padding', children=[
+        dca.Column(columnSizes=['lg-5'], offsetSizes=['lg-3'], children=[
             dca.Card(title='Slider', info='Card Info',
                      actions=[{'displayName': 'Action Test', 'actionPropName': 'test_action'}],
                      children=[
@@ -44,25 +44,24 @@ inputs_layout = dca.Grid(id='content', children=[
                          ])
                      ])
         ]),
-        dca.Column(columnSizes=['lg-4 md-5'], children=[
-            dca.Card(title='Date Picker', info='Card Info', style={'display': 'flex', 'justifyContent': 'center'}, children=[
-                dca.DatePickerRange(
-                    id='date-picker',
-                    placeholder='mm/dd/yyyy',
-                    startLabel='Start Date',
-                    endLabel='End Date',
-                ),
-            ])
+        dca.Column(columnSizes=['lg-5'], children=[
+            dca.Card(title='Date Picker', info='Card Info', style={'display': 'flex', 'justifyContent': 'center'},
+                     children=[
+                         dca.DatePickerRange(
+                             id='date-picker',
+                             placeholder='mm/dd/yyyy',
+                             startLabel='Start Date',
+                             endLabel='End Date',
+                         ),
+                     ])
         ]),
-    ]),
-    dca.Row(style={'marginTop': '24px'}, children=[
-        dca.Column(columnSizes=['lg-3 md-5'], offsetSizes=['lg-2'], children=[
+        dca.Column(columnSizes=['lg-3'], children=[
             dca.Card(title='Multiselect', children=[
                 dca.MultiSelect(id='multiselect', titleText='Fruits', options=['Apple', 'Orange', 'Grape'],
                                 label='Fruits')
             ])
         ]),
-        dca.Column(columnSizes=['lg-3 md-5'], children=[
+        dca.Column(columnSizes=['lg-3'], offsetSizes=['lg-3'], children=[
             dca.Card(title='Number Input', children=[
                 html.Div([
                     dca.NumberInput(id='number-input', helperText='max', label='Number Input', value=50, min=0,
@@ -70,7 +69,14 @@ inputs_layout = dca.Grid(id='content', children=[
                 ]),
             ])
         ]),
-        dca.Column(columnSizes=['lg-4 md-5'], offsetSizes=['lg-2'], children=[
+        dca.Column(columnSizes=['lg-2'], children=[
+            dca.Card(title='Checkbox', children=[
+                html.Div([
+                    dca.Checkbox(value=False, id='Checkbox', label='Check me', title='CHECK ME')
+                ]),
+            ])
+        ]),
+        dca.Column(columnSizes=['lg-5'], children=[
             dca.Card(title='Radio Group', children=[
                 html.Div([
                     dca.RadioButtonGroup(legendText='Radio', value='opt2', id='Radio',
@@ -82,15 +88,7 @@ inputs_layout = dca.Grid(id='content', children=[
                 ]),
             ])
         ]),
-        dca.Column(columnSizes=['lg-2 md-5'], children=[
-            dca.Card(title='Checkbox',
-                     children=[
-                         html.Div([
-                             dca.Checkbox(value=False, id='Checkbox', label='Check me', title='CHECK ME')
-                         ]),
-                     ])
-        ]),
-        dca.Column(columnSizes=['lg-4 md-5'], children=[
+        dca.Column(columnSizes=['lg-5'], offsetSizes=['lg-3'], children=[
             dca.Card(title='Buttons', children=[
                 html.Div([
                     dca.Button(id='button2', kind='secondary', children=['Secondary']),
@@ -98,7 +96,7 @@ inputs_layout = dca.Grid(id='content', children=[
                 ]),
             ])
         ]),
-        dca.Column(columnSizes=['lg-4 md-5'], style={'marginTop': '16px'}, offsetSizes=['lg-2'], children=[
+        dca.Column(columnSizes=['lg-4'], children=[
             dca.Card(title='Dropdown', children=[
                 html.Div([
                     dca.Dropdown(
@@ -113,33 +111,30 @@ inputs_layout = dca.Grid(id='content', children=[
             ])
         ]),
     ]),
-    dca.Tabs(id='tabs', headerOffsets=['lg-2'], headerSizes=['lg-10'], className='bx--offset-lg-2', children=[
-        dca.Tab(value='tab1', label='Tab 1', children=[
-            dca.Row(style={'marginTop': '24px'}, children=[
-                dca.Column(columnSizes=['lg-3'], offsetSizes=['lg-2'], children=[
-                    dca.Card(title='Tab 1 Content')
+    dca.Column(columnSizes=['lg-10'], offsetSizes=['lg-2'], children=[
+        dca.Tabs(id='tabs', headerOffsets=['lg-2'], headerSizes=['lg-10'], className='bx--offset-lg-2', children=[
+            dca.Tab(value='tab1', label='Tab 1', children=[
+                dca.Row(style={'marginTop': '24px'}, children=[
+                    dca.Column(columnSizes=['lg-3'], offsetSizes=['lg-2'], children=[
+                        dca.Card(title='Tab 1 Content')
+                    ])
+                ])
+            ]),
+            dca.Tab(value='tab2', label='Tab 2', children=[
+                dca.Row(style={'marginTop': '24px'}, children=[
+                    dca.Column(columnSizes=['lg-5'], offsetSizes=['lg-2'], children=[
+                        dca.Card(title='Tab 2 Content')
+                    ])
                 ])
             ])
         ]),
-        dca.Tab(value='tab2', label='Tab 2', children=[
-            dca.Row(style={'marginTop': '24px'}, children=[
-                dca.Column(columnSizes=['lg-5'], offsetSizes=['lg-2'], children=[
-                    dca.Card(title='Tab 2 Content')
-                ])
-            ])
-        ])
     ]),
 ])
-outputs_layout = dca.Grid(children=[
+
+outputs_layout = dca.Grid(className='bx--grid--full-width', children=[
     dca.Row(children=[
-        dca.Column(columnSizes=['lg-13'], offsetSizes=['lg-3'], children=[
-            dca.Slider(
-                id='test',
-                labelText='Demo',
-                max=1000,
-                min=0,
-                step=1,
-                value=100),
+        dca.Column(columnSizes=['lg-14'], offsetSizes=['lg-2'], children=[
+            dca.Card(title='To Do'),
         ])
     ])
 ])

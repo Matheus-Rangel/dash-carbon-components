@@ -9,7 +9,7 @@ A MultiSelect component.
 MultiSelect
 Keyword arguments:
 - `disabled` (Bool; optional): Disable the control
-- `style` (Dict; optional)
+- `style` (Dict; optional): Inline style
 - `locale` (String; optional): Specify the locale of the control.
 Used for the default compareItems used for sorting the list of items in the control.
 - `light` (Bool; optional): true to use the light version.

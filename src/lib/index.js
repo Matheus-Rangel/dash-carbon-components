@@ -17,7 +17,7 @@ import RadioButtonGroup from "./components/RadioButtonGroup";
 import Tabs from './components/Tabs';
 import Tab from './components/Tab';
 
-import '../index.scss'
+import './index.scss'
 export {
     Button,
     Card,

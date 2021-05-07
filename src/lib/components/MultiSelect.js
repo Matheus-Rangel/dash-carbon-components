@@ -47,6 +47,9 @@ MultiSelect.propTypes = {
      * Disable the control
      */
     disabled: PropTypes.bool,
+    /**
+     * Inline style
+     */
     style: PropTypes.object,
     /**
      * Specify the locale of the control.

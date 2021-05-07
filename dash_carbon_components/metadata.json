@@ -1037,7 +1037,7 @@
           "name": "object"
         },
         "required": false,
-        "description": ""
+        "description": "Inline style"
       },
       "locale": {
         "type": {
