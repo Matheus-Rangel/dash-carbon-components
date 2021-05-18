@@ -3,7 +3,7 @@ module DashCarbonComponents
 using Dash
 
 const resources_path = realpath(joinpath( @__DIR__, "..", "deps"))
-const version = "0.1.3"
+const version = "0.1.4"
 
 include("button.jl")
 include("card.jl")

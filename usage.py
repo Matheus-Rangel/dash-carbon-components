@@ -1,7 +1,7 @@
 import dash
 import dash_carbon_components as dca
 import dash_html_components as html
-from dash.dependencies import Output, Input
+from dash.dependencies import Output, Input, State
 from dash_core_components import Location
 
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
@@ -160,6 +160,15 @@ pages = {
 )
 def display_page(pathname):
     return pages[pathname]
+
+
+@app.callback(
+    Output('multiselect', 'options'),
+    Input('multiselect', 'value'),
+    State('multiselect', 'options')
+)
+def test_multiselect(value, options):
+    return options
 
 
 if __name__ == '__main__':

@@ -30,10 +30,9 @@ const MultiSelect = ({value, options, setProps,  filterable, ...others
                 }
             },
         onMenuChange:(menuChange) => {
+            setMenuOpen(menuChange)
             if (!menuChange) {
                 updateProps(currentItems)
-            } else {
-                setMenuOpen(menuChange)
             }
         },
         ...others
